@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Restaurant Siglo XXI</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="icon" href="style/images/favicon.png">
+        <link rel="stylesheet" href="style/css/main.css">
+        <link rel="stylesheet" href="style/css/menu.css">
+        <link rel="stylesheet" href="style/css/banner.css">
+        <link rel="stylesheet" href="style/css/login.css">
+    </head>
+    <body class="main_login">
+        <header>
+            <div class="contenedor">
+                <a href="index.html"><h1>&#128978; Siglo XII Food</h1></a>
+                <input type="checkbox" id="menu-bar">
+                <label for="menu-bar"><b>&#9776;</b></label>
+                <nav class="menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="login.html">Ingresar</a>
+                </nav>
+            </div>
+        </header>
+        
+        <main>
+            <!--
+            <section id="banner">
+                <img src="images/banner.jpg">
+            </section>
+            -->
+  
+            <section id="LoginFormulario">
+                    <h2 class="login_title">Inicio de Sesion</h2>
+                    <div class="login">
+                        <form id="loginform">
+                            <div class="form_group">
+                                <input type="text" id="id_usuario" name="username" required id="id_email" placeholder=" Usuario">
+                            </div>
+                            <div class="form_group">
+                                <input type="password" name="password" required id="id_password" placeholder=" Contraseña">
+                            </div>
+                            <h4 class="recover">¿Haz olvidado tu contraseña? Click <a class="link" href='#'>Aqui</a></h4>
+
+                            <button class="btnlogin" type="submit">Ingresar</button>  
+                        </form>
+                    </div>  
+
+                    <!--Panel Secreto-->
+                    <button type="button" class="collapsible">Panel Secreto</button>
+                    <div class="secret">
+                        <div>
+                            <h2>Listar</h2>
+                            <button class="btnlogin" type="button" onclick="Listar()">Listar Clientes</button>       
+                        </div> 
+    
+                        <div>
+                            <h2>Cierra Tu Sesion</h2>
+                            <button class="btnlogin" type="button" onclick="Logout2()">Cerrar Sesion</button>       
+                        </div>                     
+                    </div>
+
+                    <!--Botones Demo
+
+                    <div>
+                        <h2>Listar</h2>
+                        <button class="btnlogin" type="button" onclick="Listar()">Listar Clientes</button>       
+                    </div> 
+
+                    <div>
+                        <h2>Cierra Tu Sesion</h2>
+                        <button class="btnlogin" type="button" onclick="Logout2()">Cerrar Sesion</button>       
+                    </div> 
+
+                    <div id="Prueba">
+                        
+                    </div>
+
+                    -->
+            </section>
+  
+        </main>
+        
+        <footer class = "footer">
+            <div class="contenedor">
+                <p class="copy">Restaurant Siglo XII &copy; 2020</p>
+                <div class="redesociales">
+                    <p class = "footer-title">Contactos</p>
+                    <br>
+                    <p>Telefono y Reservas: +569 6745 8243</p>
+                    <p>Email: siglo21food@gmail.com</p>
+                    <p>Atencion al cliente: +569 7856 0423</p>
+                    <br>
+                </div>
+                <div class="redesociales">
+                    <p class = "footer-title">Horarios de Atencion</p>
+                    <br>
+                    <p>Lunes a Viernes: 10:00 am - 9:00 pm</p>
+                    <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
+                    <br>
+                </div>
+                <div class="redesociales">
+                    <p class = "footer-title">Redes Sociales</p>
+                    <br>
+                    <p>Facebook: Siglo21rest</p>
+                    <p>Instragram: restaurant_siglo21</p>
+                    <img src="style/images/facebook.png">
+                    <img src="style/images/twitter.png">
+                </div>
+            </div>
+        
+        </footer>
+
+        <script src="style/js/login2.js"></script>
+        <script src="style/js/logout.js"></script>
+        <script src="style/js/logout2.js"></script>
+        <script src="style/js/listacliente.js"></script>
+        <script src="style/js/push.min.js"></script>
+        <script src="style/js/panel.js"></script>
+    </body>
+</html>

@@ -1,0 +1,154 @@
+/*Estilos basicos a toda la pagina*/
+*
+{
+    margin: 0;
+    padding: 0;
+    /*Encajamos todo adentro en caso de padding y margin*/
+    box-sizing: border-box;
+}
+
+/* Cuerpo de la pagina*/
+body
+{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #e9d1b3;
+}
+
+.main{
+    width: 100%;
+}
+
+/* HEADER de la pagina donde esta el menu, titulo y logo de la empresa*/
+
+header
+{
+    width: 100%;
+    height: 80px;
+    background: #7b6842;
+    color: #fff;
+    
+    /*Dejamos fijo el menu en Responsive*/
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    /* Tapamos con el Header lo que se le cruza... */
+    z-index: 100;
+}
+
+/* TODOS los Contenedores */
+.contenedor
+{
+    width: 100%;
+    margin: auto;
+}
+
+.footer
+{
+    /*position: fixed;*/
+    bottom: 0; 
+    width: 100%;
+    margin: auto;
+}
+
+/* Titulo de la pagina*/
+h1
+{
+    text-decoration: none;
+    float: left;
+    margin: 18px;
+    color: #fff;
+}
+
+
+/* Contenedor del Header*/
+header .contenedor
+{
+    display: table;
+}
+
+/* TODAS las section de la pagina*/
+section
+{
+    width: 100%;
+    /*margin-bottom: 25px;*/
+}
+
+/* Footer de la pagina*/
+footer
+{
+    background: #9a834e;
+}
+
+/* Contenedor del Footer*/
+footer .contenedor
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Parrafo del Footer*/
+.copy
+{
+    font-size: 20px;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* Redes sociales del Footer*/
+.redesociales
+{
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* Imagenes de las redes sociales del footer*/
+.redesociales img
+{
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+}
+
+.footer-title{
+    margin-top: 10px;
+}
+
+/* RESPONSIVE - RESPONSIVE - RESPONSIVE - RESPONSIVE - */
+/*Minimo 720px*/
+@media (min-width:720px){
+    
+    /* Redes sociales del Footer*/
+    .redesociales
+    {
+        width: auto;
+    }
+    
+    /* Contenedor del Footer*/
+    footer .contenedor
+    {
+        justify-content: space-between;
+    }
+    
+}
+
+/* RESPONSIVE - RESPONSIVE - RESPONSIVE - RESPONSIVE - */
+/*Minimo 1024px*/
+@media (min-width:1024px){
+    
+    /* TODOS los Contenedores */
+    .contenedor
+    {
+        /*width: 1300px;*/
+        width: 100%;
+        
+    }
+    
+    
+}

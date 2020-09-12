@@ -1,0 +1,84 @@
+/* Barra Menu CheckBox */
+#menu-bar
+{
+    display: none;
+}
+
+/* Label que esta dentro del header donde esta el icono 3 barras del menu*/
+
+header label
+{
+    float: right;
+    font-size: 35px;
+    margin: 15px 25px;
+    /* Cuando se mueve el puntero al menu aparecera una manito*/
+    cursor: pointer;
+}
+
+/* Menu desplegable */
+.menu
+{
+    position: absolute;
+    /* Ajustamos para comience cuando termine el Header*/
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #9a834e;
+    opacity: 0.9;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+}
+
+/* Contenido del Menu */
+.menu a
+{
+    display: block;
+    color: #fff;
+    height: 60px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid;
+}
+
+/* Cuando pase el puntero del mouse por el contenido del menu*/
+.menu a:hover
+{
+    background: #cdae68;
+}
+
+/* Cuando se selecciona el Menu (checkbox)*/
+#menu-bar:checked ~ .menu
+{
+    transform: translateX(0%);
+}
+
+/* RESPONSIVE - RESPONSIVE - RESPONSIVE - RESPONSIVE - */
+/*Minimo 1024px*/
+@media (min-width:1024px){
+    
+    /* Menu desplegable */
+    .menu{
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+    }
+    
+    /* Contenido del Menu */
+    .menu a
+    {
+        border: none;
+        /*Ajustamos la altura de los enlaces a escritorio*/
+        height: 80px;
+        padding: 30px;
+    }
+    
+    /* Label que esta dentro del header donde esta el icono 3 barras del menu*/
+    header label
+    {
+        display: none;
+    }
+}
