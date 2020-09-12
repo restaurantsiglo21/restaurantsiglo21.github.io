@@ -7,7 +7,7 @@ formulario.addEventListener('submit', function(e){
 
     var datos = new FormData(formulario);
 
-    fetch('http://apisiglo21food.pythonanywhere.com/api_token/', {
+    fetch('https://apisiglo21food.pythonanywhere.com/api_token/', {
         method : 'GET',
         body : datos
     })

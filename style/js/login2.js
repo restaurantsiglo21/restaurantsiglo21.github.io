@@ -5,7 +5,7 @@ formulario.addEventListener('submit', function(e){
     var datos = new FormData(formulario);
     var xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "http://apisiglo21food.pythonanywhere.com/api_token/");
+    xhr.open("POST", "https://apisiglo21food.pythonanywhere.com/api_token/");
     
     xhr.responseType = 'json'
 
