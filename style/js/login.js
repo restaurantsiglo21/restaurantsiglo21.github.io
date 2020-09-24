@@ -7,7 +7,7 @@ formulario.addEventListener('submit', function(e){
 
     var datos = new FormData(formulario);
 
-    fetch('https://apisiglo21food.pythonanywhere.com/api_token/', {
+    fetch('http://127.0.0.1:8000/api_token/', {
         method : 'GET',
         body : datos
     })
@@ -21,14 +21,14 @@ formulario.addEventListener('submit', function(e){
             //    localStorage.setItem("SavedToken", token)           
             //}
 
-            localStorage.setItem("SaveToken", data)
+            localStorage.setItem("dummy", data)
 
             Push.create("Peticion enviada",{
                 body: "Tu token de autenticacion ya ha sido generado!!",
                 icon: "images/icon192x192.png",
                 timeout: 8000,
                 onClick: function(){                  
-                    window.location.replace("https://miguelmartinez20.github.io/login.html");
+                    window.location.replace("http://127.0.0.1:8000//login.html");
                     this.close();
                 }
             });

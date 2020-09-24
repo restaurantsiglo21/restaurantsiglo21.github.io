@@ -4,7 +4,7 @@ function Listar(){
     var xhr = new XMLHttpRequest();
     
 
-    xhr.open("GET", "https://apisiglo21food.pythonanywhere.com/api/cliente/");
+    xhr.open("GET", "http://127.0.0.1:8000/api/cliente/");
 
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'

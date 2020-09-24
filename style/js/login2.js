@@ -5,7 +5,7 @@ formulario.addEventListener('submit', function(e){
     var datos = new FormData(formulario);
     var xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "https://apisiglo21food.pythonanywhere.com/api_token/");
+    xhr.open("POST", "http://127.0.0.1:8000/api_token/");
     
     xhr.responseType = 'json'
 
@@ -17,9 +17,7 @@ formulario.addEventListener('submit', function(e){
         console.log(data)
         console.log(data.token)
     
-        //for (var i = 0; i < respuesta.length; i++) {
-        //   localStorage.setItem("SavedToken", respuesta[i].token)
-        //}
+        location.replace("http://127.0.0.1:8887/orden.html");
     }
 
     xhr.send(datos);
