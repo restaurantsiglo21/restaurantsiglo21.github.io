@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="style/css/banner.css">
         <link rel="stylesheet" href="style/css/grid.css">
         <link rel="stylesheet" href="style/css/tabla.css">
+        <link rel="stylesheet" href="style/css/login.css">
     </head>
     <body>
         <header>
@@ -95,6 +96,20 @@
                     </table>   
                 
             </div>
+
+            
+            <form class="form_orden">
+                    <label for="n_orden" class="label_orden">Actualizar Orden:</label>
+                    <input type="text" class="form-control" id="n_orden" name="n_orden" required placeholder="Numenro de Orden">
+                    <label for="n_orden" class="label_orden">Estado:</label>
+                    <select name="estado" class="form-control" id="estado" required>
+                        <option value="PREPARACION">PREPARACION</option>
+                        <option value="LISTA">LISTA</option>
+                        <option value="ENTREGADA">ENTREGADA</option>
+                    </select>
+                    <button class="btn btn-primary" type="button" id="boton_estado" onclick="EditarOrden()">Cambiar Estado</button>  
+            </form>
+            
   
         </main>
         
@@ -129,5 +144,6 @@
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="style/js/listaorden.js"></script>
+        <script src="style/js/editarorden.js"></script>
     </body>
 </html>

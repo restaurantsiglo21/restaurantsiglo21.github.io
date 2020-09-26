@@ -19,16 +19,32 @@
     table-layout: fixed;
 }
 
+#n_orden{
+    margin-left: 10px;
+}
+
+#estado{
+    margin-left: 10px;
+}
+
+#boton_estado{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.form_orden{
+    width: 30%;
+}
+.label_orden{
+    text-align: left; 
+    margin-left: 10px;
+    color: black;
+    margin-top: 10px;
+}
+
 @media (min-width:720px)
 {
-    #table_title{
-        color: white;
-    }
-    
-    #table_title2{
-        color: white;
-    }
-
     #cola{
         float: left;
         margin-left: 1%;
@@ -42,6 +58,7 @@
         margin-left: 0.5%;
         margin-right: 1%;
         width: 48.5%;
+        
     }
 
 }
