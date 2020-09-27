@@ -1,6 +1,28 @@
 function EditarOrden(){
     var token = localStorage.getItem("SavesToken", token) 
     
+    /*var ordenes = [125,26,35]
+
+    localStorage.setItem("Ordenes", JSON.stringify(ordenes));
+
+    var ordenes_pedidas = JSON.parse(localStorage.getItem("Ordenes"));
+
+    console.log(ordenes)
+    console.log(ordenes_pedidas)
+
+    for (var i = 0; i < ordenes_pedidas.length; i++) {
+        console.log(ordenes_pedidas[i])
+    }
+
+    ordenes_pedidas.push(4798)
+
+    localStorage.setItem("Ordenes", JSON.stringify(ordenes_pedidas));
+
+    var ordenes_pedidas = JSON.parse(localStorage.getItem("Ordenes"));
+
+    console.log(ordenes)
+    console.log(ordenes_pedidas)*/
+
     var n_orden = document.getElementById("n_orden").value
     var estado = document.getElementById("estado").value
     

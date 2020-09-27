@@ -100,7 +100,8 @@ body {
     margin-bottom: 3em;
     margin-left: 6em;
     background-color: green;
-    color: white;
+    color: black;
+    font-weight: bolder;
     border-radius: 5px;
     border: none;
     box-shadow: 1px 1px 1px 1px rgb(0, 0, 0, 0.3);
@@ -110,7 +111,8 @@ body {
     width: 15em;
     height: 10em;
     background-color: green;
-    color: white;
+    color: black;
+    font-weight: bolder;
     margin-top: 13px;
     margin-bottom: 44px;
     margin-left: 6em;
