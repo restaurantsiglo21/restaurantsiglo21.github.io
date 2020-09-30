@@ -1,0 +1,109 @@
+main {
+    background-color: #caab6e;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.titulo{
+    margin-top: 80px;
+    font-size: 31px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#scrollbar{
+    height: 400px;
+    overflow: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#table_title3{
+    caption-side: top;
+    color: black;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloques {
+    width: 600px;
+    height: 600px;
+    background-color: rgb(105, 82, 7);
+    border-radius: 5px;
+    margin: 5px;
+    border: 2px solid gray;
+}
+
+.labels {
+    display: block;
+    width: 100%;
+    color: white;
+    margin-left: auto;
+    padding: 5px;
+    font-size: 18px;
+    margin: 0px auto;
+}
+.texto {
+    width: 95%;
+    border-radius: 4px;
+    padding: 5px;
+    border: 1px solid gray;
+    margin: 4px 10px ;
+}
+
+.texto:focus {
+    border: inset 2px solid #444;
+}
+
+.subheader {
+    color: white;
+    width: 100%;
+    font-size: 22px;
+    padding: 5px;
+}
+
+.text-area {
+    width:95%;
+    margin-left: 10px;
+    height: 100px;
+    resize: none;
+    border-radius: 4px;
+    border: 1px solid gray;
+
+}
+
+.boton {
+    width: 200px;
+    width: 200px;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: 1px 1px 1px rgb(0,0,0, 0.5);
+    border-radius: 4px;
+}
+
+.combo {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.boton:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
