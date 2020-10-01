@@ -95,19 +95,26 @@
           <div class="content">
             <div class="product bloques">
               <h1 class="subheader">Registrar producto</h1>
-              <form>
+              <form id="productoform">
+                  <span id="alerta"></span>
                   <label class="labels">Nombre:</label>
-                  <input class="texto" type="text" name="nombre_producto" placeholder="Ingresa el nombre de producto..."/>
+                  <input class="texto" type="text" name="nombre" id="nombre_producto" required placeholder="Ingresa el nombre de producto..."/>
                   <label class="labels">Costo:</label>
-                  <input class="texto" type="number" name="costo" placeholder="Ingresa el coste de producto..."/>
+                  <input class="texto" type="number" name="costo" id="costo_producto" required placeholder="Ingresa el coste de producto..."/>
                   <label class="labels">Stock:</label>
-                  <input class="texto" type="number" name="stock" placeholder="Cantidad de productos..."/>
+                  <input class="texto" type="number" name="stock" id="stock_producto" required placeholder="Cantidad de productos..."/>
+                  <label class="labels">Embalaje:</label>
+                  <select class="combo" name="embalaje" id="embalaje_producto" required>
+                      <option value="ENVASADO">ENVASADO</option>
+                      <option value="GRANEL">GRANEL</option>
+                  </select>
                   <label class="labels">Detalle:</label>
-                  <textarea class="text-area" maxlength="200" placeholder="Detalle del producto..."></textarea>
-                  <button class="boton">Modificar stock</button>
-                  <button class="boton">Registrar nuevo +</button>
+                  <textarea class="text-area" name="detalle" id="detalle_producto" maxlength="300" required placeholder="Detalle del producto..."></textarea>
+                  <button class="boton" type="button" onclick="ModificarStock()">Modificar stock</button>
+                  <button class="boton" type="button" onclick="CrearProducto()">Registrar nuevo +</button>
               </form>
             </div>
+
             <div class="plato bloques">
               <form>
                   <h1 class="subheader">Registrar plato</h1>
@@ -127,7 +134,7 @@
                   </select>
                   <label class="labels">Precio venta ($)</label>
                   <input class="texto" type="number" name="precio_prod"/>
-                  <button class="boton">Registrar</button>
+                  <button class="boton" type="button">Registrar</button>
               </form>
             </div>
           </div>
@@ -162,7 +169,8 @@
             </div>
         </footer>
 
-        <script src="style/js/listaproducto.js"></script>
+        <script src="style/js/crearproducto.js"></script>
+        <script src="style/js/listaproducto.js" onload="ListarProductos()"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

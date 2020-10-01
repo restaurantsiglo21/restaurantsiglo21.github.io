@@ -58,7 +58,5 @@ function EditarOrden(){
     }
 
     xhr.send();
-
-
 }
 
