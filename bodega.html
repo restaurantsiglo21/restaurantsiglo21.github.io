@@ -92,49 +92,73 @@
             </table>  
           </div>
 
-          <div class="content">
+          <div class="content" id="mantenedores">
             <div class="product bloques">
               <h1 class="subheader">Registrar producto</h1>
               <form id="productoform">
                   <span id="alerta"></span>
                   <label class="labels">Nombre:</label>
-                  <input class="texto" type="text" name="nombre" id="nombre_producto" required placeholder="Ingresa el nombre de producto..."/>
+                  <input class="texto" type="text" name="nombre" id="nombre_producto" required placeholder="Ingresa el nombre de producto"/>
                   <label class="labels">Costo:</label>
-                  <input class="texto" type="number" name="costo" id="costo_producto" required placeholder="Ingresa el coste de producto..."/>
+                  <input class="texto" type="number" name="costo" id="costo_producto" required placeholder="Ingresa el coste de producto"/>
                   <label class="labels">Stock:</label>
-                  <input class="texto" type="number" name="stock" id="stock_producto" required placeholder="Cantidad de productos..."/>
+                  <input class="texto" type="number" name="stock" id="stock_producto" required placeholder="Cantidad de productos"/>
                   <label class="labels">Embalaje:</label>
                   <select class="combo" name="embalaje" id="embalaje_producto" required>
                       <option value="ENVASADO">ENVASADO</option>
                       <option value="GRANEL">GRANEL</option>
                   </select>
                   <label class="labels">Detalle:</label>
-                  <textarea class="text-area" name="detalle" id="detalle_producto" maxlength="300" required placeholder="Detalle del producto..."></textarea>
+                  <textarea class="text-area" name="detalle" id="detalle_producto" maxlength="300" required placeholder="Detalle del producto"></textarea>
                   <button class="boton" type="button" onclick="ModificarStock()">Modificar stock</button>
                   <button class="boton" type="button" onclick="CrearProducto()">Registrar nuevo +</button>
               </form>
             </div>
 
             <div class="plato bloques">
-              <form>
+              <form id="recetaform">
                   <h1 class="subheader">Registrar plato</h1>
-                  <label class="labels">Número:</label>
-                  <input class="texto" type="number" name="numero_producto" placeholder="Ingresa el numero de producto..."/>
+                  <span id="alerta_2"></span>
                   <label class="labels">Nombre:</label>
-                  <input class="texto" type="text" name="nombre_producto" placeholder="Ingresa el nombre de producto..."/>
+                  <input class="texto" type="text" name="nombre" placeholder="Ingresa el nombre de producto"/>
                   <label class="labels">Ingredientes:</label>
-                  <input class="texto" type="text" name="costo" placeholder="Ingresa el coste de producto..."/>
+                  <input class="texto" type="text" name="ingredientes" id="input_ingredientes" placeholder="11,22,333..."/>
                   <label class="labels">Tiempo preparacion:</label>
-                  <input class="texto" type="number" name="stock" placeholder="Cantidad de productos..."/>
-                  <label class="labels">Categoria:</label>
-                  <select class="combo" name="productos">
-                      <option value="cat_1">Categoria 1</option>
-                      <option value="cat_2">Categoria 2</option>
-                      <option value="cat_3">Categoria 3</option>
+                  <input class="texto" type="number" name="t_preparacion" placeholder="Minutos"/>
+                  <label class="labels">Grupo:</label>
+                  <select class="combo" name="grupo">
+                      <option value="ENTRADA">ENTRADA</option>
+                      <option value="PLATO_FONDO">PLATO DE FONDO</option>
+                      <option value="APERITIVO">APERITIVO</option>
+                      <option value="AGREGADO">AGREGADO</option>
+                      <option value="BEBESTIBLE">BEBESTIBLE</option>
+                      <option value="BAJATIVO">BAJATIVO</option>
+                      <option value="POSTRE">POSTRE</option>
                   </select>
-                  <label class="labels">Precio venta ($)</label>
-                  <input class="texto" type="number" name="precio_prod"/>
-                  <button class="boton" type="button">Registrar</button>
+                  <label class="labels">Sub Grupo:</label>
+                  <select class="combo" name="sub_grupo">
+                      <option value="SOPAS">SOPAS</option>
+                      <option value="CREMAS">CREMAS</option>
+                      <option value="CARNES_ROJAS">CARNES ROJAS</option>
+                      <option value="CARNES_BLANCAS">CARNES BLANCAS</option>
+                      <option value="PESCADOS">PESCADOS</option>
+                      <option value="MARISCOS">MARISCOS</option>
+                      <option value="CALDOS">CALDOS</option>
+                      <option value="LEGUMBRES">LEGUMBRES</option>
+                      <option value="PASTELES">PASTELES</option>
+                      <option value="EMBUTIDOS">EMBUTIDOS</option>
+                      <option value="EMPANADAS">EMPANADAS</option>
+                      <option value="ENSALADAS">ENSALADAS</option>
+                      <option value="VINOS">VINOS</option>
+                      <option value="BEBIDAS">BEBIDAS</option>
+                      <option value="JUGOS">JUGOS</option>
+                      <option value="HELADOS">HELADOS</option>
+                      <option value="TORTAS">TORTAS</option>
+                      <option value="KUCHENS">KUCHENS</option>
+                  </select>
+                  <label class="labels">Precio venta</label>
+                  <input class="texto" type="number" name="precio" placeholder="Pesos ($)"/>
+                  <button class="boton" type="button" onclick="CrearReceta()">Registrar</button>
               </form>
             </div>
           </div>
@@ -171,6 +195,7 @@
 
         <script src="style/js/crearproducto.js"></script>
         <script src="style/js/listaproducto.js" onload="ListarProductos()"></script>
+        <script src="style/js/crearreceta.js"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
