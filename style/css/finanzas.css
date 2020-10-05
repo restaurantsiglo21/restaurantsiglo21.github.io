@@ -1,0 +1,18 @@
+.bloque {
+    width: 600px;
+    height: 372px;
+    background-color: rgb(105, 82, 7);
+    border-radius: 5px;
+    margin: 5px;
+    border: 2px solid gray;
+}
+
+.boton_reporte {
+    width: 96%;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: 1px 1px 1px rgb(0,0,0, 0.5);
+    border-radius: 4px;
+}
