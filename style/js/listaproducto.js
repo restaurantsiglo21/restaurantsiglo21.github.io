@@ -22,6 +22,7 @@ function ListarProductos(){
                 stock: data[i].stock,
                 embalaje: data[i].embalaje,
                 detalle: data[i].detalle,
+                movimiento: data[i].movimiento
             }
             productos.push(objeto)
         }
@@ -44,10 +45,10 @@ function ListarProductos(){
 
         var output = '';
 
-        output +='<tr><th>N° Producto</th><th>Nombre</th><th>Costo</th><th>Stock</th><th>Embalaje</th><th>Detalle</th></tr>'
+        output +='<tr><th>N° Producto</th><th>Nombre</th><th>Costo</th><th>Stock</th><th>Embalaje</th><th>Detalle</th></th><th>Movimiento</th></tr>'
 
         for (var i = 0; i < productos.length; i++) {
-            output += '<tr><td><button type="button" class="boton" onclick="LlenarCampos('+productos[i].numero+')">'+productos[i].numero+'</td>'+'<td>'+productos[i].nombre+'</td>'+'<td>'+productos[i].costo+'</td>'+'<td>'+productos[i].stock+'</td>'+'<td>'+productos[i].embalaje+'</td>'+'<td>'+productos[i].detalle+'</td>'+'<td><button type="button" class="boton_editar" onclick="LlenarIngredientes('+productos[i].numero+')">&#128221</td></tr>';  
+            output += '<tr><td><button type="button" class="boton" onclick="LlenarCampos('+productos[i].numero+')">'+productos[i].numero+'</td>'+'<td>'+productos[i].nombre+'</td>'+'<td>'+productos[i].costo+'</td>'+'<td>'+productos[i].stock+'</td>'+'<td>'+productos[i].embalaje+'</td>'+'<td>'+productos[i].detalle+'</td>'+'<td>'+productos[i].movimiento+'</td>'+'<td><button type="button" class="boton_editar" onclick="LlenarIngredientes('+productos[i].numero+')">&#128221</td></tr>';  
         }
 
         document.getElementById('tabla').innerHTML = output;

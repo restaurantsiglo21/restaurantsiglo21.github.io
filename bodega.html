@@ -101,7 +101,7 @@
                   <label class="labels">Nombre:</label>
                   <input class="texto" type="text" name="nombre" id="nombre_producto" required placeholder="Ingresa el nombre de producto"/>
                   <label class="labels">Costo:</label>
-                  <input class="texto" type="number" name="costo" id="costo_producto" required placeholder="Ingresa el coste de producto"/>
+                  <input class="texto" type="number" name="costo" id="costo_producto" required placeholder="Costo unitario del producto"/>
                   <label class="labels">Stock:</label>
                   <input class="texto" type="number" name="stock" id="stock_producto" required placeholder="Cantidad de productos"/>
                   <label class="labels">Embalaje:</label>
@@ -109,6 +109,8 @@
                       <option value="ENVASADO">ENVASADO</option>
                       <option value="GRANEL">GRANEL</option>
                   </select>
+                  <label class="labels">Movimiento:</label>
+                  <input class="texto" type="number" name="movimiento" id="stock_producto" required placeholder="N° Movimiento de compra del producto"/>
                   <label class="labels">Detalle:</label>
                   <textarea class="text-area" name="detalle" id="detalle_producto" maxlength="300" required placeholder="Detalle del producto"></textarea>
                   <button class="boton" type="button" onclick="ModificarStock()">Modificar stock</button>
@@ -121,13 +123,11 @@
                   <h1 class="subheader">Registrar plato</h1>
                   <span id="alerta_2"></span>
                   <label class="labels">Nombre:</label>
-                  <input class="texto" type="text" name="nombre" placeholder="Ingresa el nombre de producto"/>
-                  <label class="labels">Ingredientes:</label>
-                  <input class="texto" type="text" name="ingredientes" id="input_ingredientes" placeholder="11,22,333..."/>
+                  <input class="texto" type="text" name="nombre" id="nombre_receta" placeholder="Ingresa el nombre de producto"/>
                   <label class="labels">Tiempo preparacion:</label>
-                  <input class="texto" type="number" name="t_preparacion" placeholder="Minutos"/>
+                  <input class="texto" type="number" name="t_preparacion" id="preparacion_receta" placeholder="Minutos"/>
                   <label class="labels">Grupo:</label>
-                  <select class="combo" name="grupo">
+                  <select class="combo" name="grupo" id="grupo_receta">
                       <option value="ENTRADA">ENTRADA</option>
                       <option value="PLATO_FONDO">PLATO DE FONDO</option>
                       <option value="APERITIVO">APERITIVO</option>
@@ -137,7 +137,7 @@
                       <option value="POSTRE">POSTRE</option>
                   </select>
                   <label class="labels">Sub Grupo:</label>
-                  <select class="combo" name="sub_grupo">
+                  <select class="combo" name="sub_grupo" id="subgrupo_receta">
                       <option value="SOPAS">SOPAS</option>
                       <option value="CREMAS">CREMAS</option>
                       <option value="CARNES_ROJAS">CARNES ROJAS</option>
@@ -158,9 +158,12 @@
                       <option value="KUCHENS">KUCHENS</option>
                   </select>
                   <label class="labels">Precio venta</label>
-                  <input class="texto" type="number" name="precio" placeholder="Pesos ($)"/>
-                  <button class="boton" type="button" onclick="CrearReceta()">Registrar</button>
+                  <input class="texto" type="number" name="precio" id="precio_receta" placeholder="Pesos ($)"/>
               </form>
+
+              <label class="labels">Productos:</label>
+              <input class="texto" type="text" name="productos" id="input_productos" placeholder="11,22,333..."/>
+              <button class="boton" type="button" onclick="CrearReceta()">Registrar</button>
             </div>
           </div>
         </main>

@@ -1,0 +1,34 @@
+span {
+    color: white;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    line-height: 32px;
+}
+
+.plato {
+    display: block;
+    width: 100%;
+    height: 120px;
+}
+
+
+.odd {
+    background-color: #9a834e ;
+}
+
+.even {
+    background-color: #705b2a;
+}
+
+.price-btn {
+    float: right;
+    width: 100px;
+    height: 30px;
+    border: none;
+    margin-right: 50px;
+}
+
+.nombre-plato {
+    margin-bottom: 15px;
+}

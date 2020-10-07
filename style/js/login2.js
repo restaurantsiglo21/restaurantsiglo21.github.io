@@ -16,8 +16,14 @@ formulario.addEventListener('submit', function(e){
         localStorage.setItem("SavesToken", data.token) 
         console.log(data)
         console.log(data.token)
+
+        if(xhr.status >= 400){
+            document.getElementById("alerta").innerHTML = "El nombre de usuario y contraseña son Incorrectos!!"
+        }
+        if(xhr.status == 201 || xhr.status == 200 ){
+            window.location.replace("http://127.0.0.1:8887/orden.html")
+        }
     
-        location.replace("http://127.0.0.1:8887/orden.html");
     }
 
     xhr.send(datos);

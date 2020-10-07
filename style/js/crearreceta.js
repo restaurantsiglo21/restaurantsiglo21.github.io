@@ -1,9 +1,39 @@
-var formulario = document.getElementById("recetaform")
-
 function CrearReceta(){
+    var nombre_receta = document.getElementById("nombre_receta").value
+    var preparacion_receta = document.getElementById("preparacion_receta").value
+    var grupo_receta = document.getElementById("grupo_receta").value
+    var subgrupo_receta = document.getElementById("subgrupo_receta").value
+    var precio_receta = document.getElementById("precio_receta").value
+    var productos = document.getElementById("input_productos").value
+    var productos_format = ''
 
+    for (var i = 0; i < productos.length; i++) {
+        if(i != (productos.length - 1)){
+            productos_format += productos[i]
+        }
+    }
+    console.log(productos_format)
+
+    var productos = productos_format.split(',').map(function(item) {
+        return parseInt(item);
+    });
+    
     var token = localStorage.getItem("SavesToken", token) 
-    var datos = new FormData(formulario);
+    
+    var datos = new FormData();
+    datos.append("nombre", nombre_receta);
+    datos.append("t_preparacion", preparacion_receta);
+    datos.append("grupo", grupo_receta);
+    datos.append("sub_grupo", subgrupo_receta);
+    datos.append("precio", precio_receta);
+
+    for (var i = 0; i < productos.length; i++) {
+        datos.append("productos", productos[i]);
+    }
+    
+    console.log(productos)
+    console.log(datos.productos)
+
     var xhr = new XMLHttpRequest();
     
     xhr.open("POST", "http://127.0.0.1:8000/api/receta/");
@@ -28,7 +58,7 @@ function CrearReceta(){
 
 function LlenarIngredientes(numero){
 
-    var previo = document.getElementById('input_ingredientes').value
-    document.getElementById('input_ingredientes').value = previo+numero+','
+    var previo = document.getElementById('input_productos').value
+    document.getElementById('input_productos').value = previo+numero+','
     
 }

@@ -1,7 +1,6 @@
-var formulario = document.getElementById("productoform")
-
 function CrearProducto(){
-
+    
+    var formulario = document.getElementById("productoform")
     var token = localStorage.getItem("SavesToken", token) 
     var datos = new FormData(formulario);
     var xhr = new XMLHttpRequest();

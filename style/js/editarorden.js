@@ -41,6 +41,17 @@ function EditarOrden(){
         datos.append("numero", n_orden)
         datos.append("estado", estado)
         datos.append("hora_ter", data.hora_ini)
+        datos.append("mesa", data.mesa)
+
+        var recetas = data.recetas
+
+        for (var i = 0; i < recetas.length; i++) {
+            datos.append("recetas", recetas[i]);
+            console.log(recetas[i])
+        }
+
+        console.log(datos.recetas)
+        console.log(data.recetas)
 
         var peticion = new XMLHttpRequest();
         peticion.open("PUT", "http://127.0.0.1:8000/api/orden/"+n_orden+"/editar_orden/");
@@ -51,7 +62,6 @@ function EditarOrden(){
         peticion.onload = () => {
             var data2 = peticion.response;
             console.log(data2);
-            window.location.replace("http://127.0.0.1:8887/orden.html")
         }
         
         peticion.send(datos);
