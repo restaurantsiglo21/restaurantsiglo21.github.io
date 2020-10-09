@@ -1,34 +1,120 @@
-span {
-    color: white;
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+main {
+    margin-top: 90px;
+}
+
+hr{
+    color: black;
+}
+
+.page-title {
+    font-family: italic;
+    font-size: 90px;
+    text-align: center;
+
+}
+
+.div_subheader{
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: #4b7faa;
+}
+
+.subheader {
+    font-size: 40px;
     display: flex;
-    margin-left: 50px;
-    margin-right: 50px;
-    line-height: 32px;
+    font-family: arial;
+    margin: 10px;
+    color: white;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 100%;
+} 
+
+.div_category{
+    border: 1px solid black;
+    background-color: #7b6842;
+}
+
+.category {
+    font-family: arial;
+    margin: 10px;
+    color: white;
+    font-size: 25px;
+    line-height: 45px;
+}
+
+
+.seccion {
+    border: 2px solid black;
+    padding: 5px;
+    margin: 2px;
+    background-color: #4b7faa;
 }
 
 .plato {
-    display: block;
-    width: 100%;
-    height: 120px;
+    font-size: 20px;
+    padding: 15px;
+    color: white;
 }
 
-
-.odd {
-    background-color: #9a834e ;
-}
-
-.even {
-    background-color: #705b2a;
-}
-
-.price-btn {
+.price {
     float: right;
-    width: 100px;
-    height: 30px;
-    border: none;
-    margin-right: 50px;
+    margin-right: 10px;
 }
 
-.nombre-plato {
-    margin-bottom: 15px;
+.add {
+    font-size: 18px;
+    width: 100px;
+    padding: 5px;
+    float: right;
+    border: 1PX solid #444;
+    background-color: rgb(24, 148, 13);
+    border-radius: 4px;
+    color: white;
+    transform: translateY(-5px);
+    height: 37px;
 }
+
+
+.add:hover {
+    cursor: pointer;
+    background-color: rgb(58, 189, 46);
+    border: 1PX solid rgb(185, 185, 185);
+}
+
+.confirmacion {
+    position: fixed;
+    line-height: 15px;
+    background-color: #7b6842;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    bottom: 0;
+}
+
+.confirmacion button {
+    background-color: rgb(24, 148, 13);
+    font-size: 18px;
+    width: 300px;
+    padding: 18px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    margin-left: 70px;
+}
+
+.confirmacion button:hover {
+    cursor: pointer;
+    background-color: rgb(58, 189, 46);
+    border: 1px solid rgb(185, 185, 185);
+}
+
+
+
+
+

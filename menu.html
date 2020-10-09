@@ -9,7 +9,7 @@
         <link rel="icon" href="style/images/favicon.png" />
         <link rel="stylesheet" href="style/css/main.css" />
         <link rel="stylesheet" href="style/css/menu.css" />
-        <link rel="stylesheet" href="style/css/menu_mesa.css"/>
+        <link rel="stylesheet" href="style/css/menu_mesa.css" type="text/css" />
     </head>
     <body>
         <header>
@@ -24,52 +24,476 @@
             </div>
         </header> 
         <main class="main">
-            <section class="plato odd">
-                <span class="nombre-plato">Sopita</span>
-                <span class="precio-plato">Precio: </span>
-                <button class="price-btn">Agregar</button>
+            <div class="page-title">Menú</div>
+            <section class="grid">
+                <!--SECCION DE ENTRADAS-->
+                <div class="div_subheader">
+                    <span class="subheader">Entradas</span>
+                </div>
+                <div class="div_category">
+                    <span class="category">Sopas</span>
+                </div>
+                <div class="entradas seccion" id="Sopas">
+                    <div class="plato">
+                        <span><strong>Consomé de pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 3500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span><strong>Machas a la parmesana (6 unid)</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 3000 c/u</span>
+                    </div>
+                </div>
+                <div class="div_category">
+                    <span class="category">Cremas</span>
+                </div>
+                <div class="entradas seccion" id="Cremas">
+                    <div class="plato">
+                        <span><strong>Consomé de pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 3500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span><strong>Machas a la parmesana (6 unid)</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 3000 c/u</span>
+                    </div>
+                </div>
+                <div class="div_category">
+                    <span class="category">Empanadas</span>
+                </div>
+                <div class="fondo seccion" id="Empanadas">
+                    <div class="plato">
+                        <span class="labels"><strong>Vienesa</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <!--FIN SECCION DE ENTRADAS-->
+
+                <!--SECCION DE PLATOS DE FONDO-->
+                <div class="div_category">
+                    <span class="category">Carnes Rojas</span>
+                </div>
+                <div class="fondo seccion" id="Carnes_Rojas">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Carnes Blancas</span>
+                </div>
+                <div class="fondo seccion" id="Carnes_Blancas">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Pescados</span>
+                </div>
+                <div class="fondo seccion" id="Pescados">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Mariscos</span>
+                </div>
+                <div class="fondo seccion" id="Mariscos">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Caldos</span>
+                </div>
+                <div class="fondo seccion" id="Caldos">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Legumbres</span>
+                </div>
+                <div class="fondo seccion" id="Legumbres">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Pasteles</span>
+                </div>
+                <div class="fondo seccion" id="Pasteles">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category" >Embutidos</span>
+                </div>
+                <div class="fondo seccion" id="Embutidos">
+                    <div class="plato">
+                        <span class="labels"><strong>Vienesa</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                
+                <!--FIN SECCION DE PLATOS DE FONDO-->
+
+                <!--SECCION DE APERITIVOS-->
+                <div class="div_subheader">
+                    <span class="subheader">Aperitivos</span> 
+                </div>
+                <div class="div_category">
+                    <span class="category">Picoteos, Empanadas y Snacks</span>
+                </div>
+                <div class="fondo seccion" id="Aperitivos">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                </div>
+                <!--FIN SECCION DE APERITIVOS-->
+
+                <!--SECCION DE AGREGADOS-->
+                <div class="div_subheader">
+                    <span class="subheader">Agregados</span> 
+                </div>
+                <div class="div_category">
+                    <span class="category">Acompañamientos</span>
+                </div>
+                <div class="fondo seccion" id="Agregados">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                </div>
+                <!--FIN SECCION DE AGREGADOS-->
+
+                <!--SECCION DE BEBESTIBLE-->
+                <div class="div_subheader">
+                    <span class="subheader">Bebestible</span> 
+                </div>
+                <div class="div_category">
+                    <span class="category">Vinos y Catas</span>
+                </div>
+                <div class="fondo seccion" id="Vinos">
+                    <div class="plato">
+                        <span class="labels"><strong>Vienesa</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Bebidas</span>
+                </div>
+                <div class="fondo seccion" id="Bebidas">
+                    <div class="plato">
+                        <span class="labels"><strong>Vienesa</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Jugos y Batidos</span>
+                </div>
+                <div class="fondo seccion" id="Jugos">
+                    <div class="plato">
+                        <span class="labels"><strong>Vienesa</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Bajativos</span>
+                </div>
+                <div class="fondo seccion" id="Bajativos">
+                    <div class="plato">
+                        <span class="labels"><strong>Vienesa</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                
+                <!--FIN SECCION DE BEBESTIBLE-->
+
+                <!--SECCION DE POSTRES-->
+                <div class="div_subheader">
+                    <span class="subheader">Postres</span> 
+                </div>
+                <div class="div_category">
+                    <span class="category">Helados</span>
+                </div>
+                <div class="fondo seccion" id="Helados">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                    <div class="plato">
+                        <span class="labels"><strong>Paila Marina</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 8000 c/u</span>
+                    </div>
+                </div>
+                <div class="div_category">
+                    <span class="category">Tortas</span>
+                </div>
+                <div class="fondo seccion" id="Tortas">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="div_category">
+                    <span class="category">Kuchen</span>
+                </div>
+                <div class="fondo seccion" id="Kuchen">
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Osobuco</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 5500 c/u</span>
+                    </div>
+                    <hr />
+                    <div class="plato">
+                        <span class="labels"><strong>Cazuela de Pollo</strong></span>
+                        <button class="add" type="button">Agregar</button>
+                        <span class="price">Precio: 4800 c/u</span>
+                    </div>
+                    <hr/>
+                </div>
+                <!--FIN SECCION DE POSTRES-->
+                
+                
             </section>
-            <section class="plato even">
-                <span class="nombre-plato">Sopita</span>
-                <span class="precio-plato">Precio: </span>
-                <button class="price-btn">Agregar</button>
-            </section>
-            <section class="plato odd">
-                <span class="nombre-plato">Sopita</span>
-                <span class="precio-plato">Precio: </span>
-                <button class="price-btn">Agregar</button>
-            </section>
-            <section class="plato even">
-                <span class="nombre-plato">Sopita</span>
-                <span class="precio-plato">Precio: </span>
-                <button class="price-btn">Agregar</button>
-            </section>
-            <section class="plato odd">
-                <span class="nombre-plato">Sopita</span>
-                <span class="precio-plato">Precio: </span>
-                <button class="price-btn">Agregar</button>
-            </section>
-            <section class="plato even">
-                <span class="nombre-plato">Sopita</span>
-                <span class="precio-plato">Precio: </span>
-                <button class="price-btn">Agregar</button>
-            </section>
-            <section class="plato odd">
-                <span class="nombre-plato">Sopita</span>
-                <span class="precio-plato">Precio: </span>
-                <button class="price-btn">Agregar</button>
-            </section>
-            <section class="plato even">
-                <span class="nombre-plato">Sopita</span>
-                <span class="precio-plato">Precio: </span>
-                <button class="price-btn">Agregar</button>
-            </section>
-            <section class="plato odd">
-                <span class="nombre-plato">Sopita</span>
-                <span class="precio-plato">Precio: </span>
-                <button class="price-btn">Agregar</button>
-            </section>
+            <div class="confirmacion">
+                <h1>¿Confirmar su pedido?</h1>
+                <button type="submit">Confirmar pedido</button>
+            </div>
         </main>
+        <script src="style/js/listarecetas.js" onload="ListarRecetas()"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
     </body>

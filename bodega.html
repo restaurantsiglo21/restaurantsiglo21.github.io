@@ -110,7 +110,7 @@
                       <option value="GRANEL">GRANEL</option>
                   </select>
                   <label class="labels">Movimiento:</label>
-                  <input class="texto" type="number" name="movimiento" id="stock_producto" required placeholder="N° Movimiento de compra del producto"/>
+                  <input class="texto" type="number" name="movimiento" id="movimiento_producto" required placeholder="N° Movimiento de compra del producto"/>
                   <label class="labels">Detalle:</label>
                   <textarea class="text-area" name="detalle" id="detalle_producto" maxlength="300" required placeholder="Detalle del producto"></textarea>
                   <button class="boton" type="button" onclick="ModificarStock()">Modificar stock</button>
@@ -133,7 +133,6 @@
                       <option value="APERITIVO">APERITIVO</option>
                       <option value="AGREGADO">AGREGADO</option>
                       <option value="BEBESTIBLE">BEBESTIBLE</option>
-                      <option value="BAJATIVO">BAJATIVO</option>
                       <option value="POSTRE">POSTRE</option>
                   </select>
                   <label class="labels">Sub Grupo:</label>
@@ -153,9 +152,11 @@
                       <option value="VINOS">VINOS</option>
                       <option value="BEBIDAS">BEBIDAS</option>
                       <option value="JUGOS">JUGOS</option>
+                      <option value="BAJATIVO">BAJATIVO</option>
                       <option value="HELADOS">HELADOS</option>
                       <option value="TORTAS">TORTAS</option>
                       <option value="KUCHENS">KUCHENS</option>
+                      <option value="OTRO">OTRO</option>
                   </select>
                   <label class="labels">Precio venta</label>
                   <input class="texto" type="number" name="precio" id="precio_receta" placeholder="Pesos ($)"/>
