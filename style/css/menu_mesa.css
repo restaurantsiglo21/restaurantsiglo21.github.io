@@ -87,6 +87,39 @@ hr{
     border: 1PX solid rgb(185, 185, 185);
 }
 
+.remove {
+    font-size: 18px;
+    width: 50px;
+    padding: 5px;
+    float: right;
+    border: 1PX solid #444;
+    background-color: red;
+    border-radius: 4px;
+    color: white;
+    transform: translateY(-5px);
+    height: 37px;
+}
+
+.remove:hover {
+    cursor: pointer;
+    background-color: rgb(255, 109, 109);
+    border: 1PX solid rgb(185, 185, 185);
+}
+
+.total{
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+    color: white;
+    float: right;
+    background-color: rgb(24, 148, 13);
+    border: 1PX solid #444;
+    border-radius: 4px;
+    width: 200px;
+    line-height: 40px;
+    text-align: center;
+}
+
 .confirmacion {
     position: fixed;
     line-height: 15px;

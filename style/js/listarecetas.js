@@ -70,89 +70,89 @@ function ListarRecetas(){
 
             if(recetas[i].grupo == 'ENTRADA'){
                 if(recetas[i].sub_grupo == 'SOPAS'){
-                    sopas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    sopas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Sopas').innerHTML = sopas
                 } 
                 if(recetas[i].sub_grupo == 'CREMAS'){
-                    cremas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    cremas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Cremas').innerHTML = cremas
                 }
                 if(recetas[i].sub_grupo == 'EMPANADAS'){
-                    empanadas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    empanadas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Empanadas').innerHTML = empanadas
                 }              
             }
             if(recetas[i].grupo == 'PLATO_FONDO'){
                 if(recetas[i].sub_grupo == 'CARNES_ROJAS'){
-                    carnes_rojas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    carnes_rojas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Carnes_Rojas').innerHTML = carnes_rojas
                 } 
                 if(recetas[i].sub_grupo == 'CARNES_BLANCAS'){
-                    carnes_blancas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    carnes_blancas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Carnes_Blancas').innerHTML = carnes_blancas
                 }  
                 if(recetas[i].sub_grupo == 'PESCADOS'){
-                    pescados += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    pescados += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Pescados').innerHTML = pescados
                 }
                 if(recetas[i].sub_grupo == 'MARISCOS'){
-                    mariscos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    mariscos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Mariscos').innerHTML = mariscos
                 }
                 if(recetas[i].sub_grupo == 'CALDOS'){
-                    caldos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    caldos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Caldos').innerHTML = caldos
                 }
                 if(recetas[i].sub_grupo == 'LEGUMBRES'){
-                    legumbres += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    legumbres += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Legumbres').innerHTML = legumbres
                 }   
                 if(recetas[i].sub_grupo == 'PASTELES'){
-                    pasteles += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    pasteles += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Pasteles').innerHTML = pasteles
                 }  
                 if(recetas[i].sub_grupo == 'EMBUTIDOS'){
-                    embutidos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    embutidos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Embutidos').innerHTML = embutidos
                 }           
             }
             if(recetas[i].grupo == 'APERITIVO'){
-                aperitivo += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                aperitivo += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                 document.getElementById('Aperitivos').innerHTML = aperitivo
             }
             if(recetas[i].grupo == 'AGREGADO'){
-                agregado += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                agregado += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                 document.getElementById('Agregados').innerHTML = agregado
             }
             if(recetas[i].grupo == 'BEBESTIBLE'){
                 if(recetas[i].sub_grupo == 'VINOS'){
-                    vinos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    vinos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Vinos').innerHTML = vinos
                 } 
                 if(recetas[i].sub_grupo == 'BEBIDAS'){
-                    bebidas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    bebidas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Bebidas').innerHTML = bebidas
                 }
                 if(recetas[i].sub_grupo == 'JUGOS'){
-                    jugos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    jugos += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Jugos').innerHTML = jugos
                 }   
                 if(recetas[i].sub_grupo == 'BAJATIVO'){
-                    bajativo += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    bajativo += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Bajativos').innerHTML = bajativo
                 }           
             }
             if(recetas[i].grupo == 'POSTRE'){
                 if(recetas[i].sub_grupo == 'HELADOS'){
-                    helados += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    helados += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Helados').innerHTML = helados
                 } 
                 if(recetas[i].sub_grupo == 'TORTAS'){
-                    tortas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    tortas += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price" >'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Tortas').innerHTML = tortas
                 }
                 if(recetas[i].sub_grupo == 'KUCHENS'){
-                    kuchen += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
+                    kuchen += '<div class="plato"><span class="labels"><strong>'+recetas[i].nombre+'</strong></span><button class="add" type="button" onclick="AgregarPedido('+recetas[i].numero+')">Agregar</button><span class="price">'+'$'+recetas[i].precio+' c/u</span></div><hr>'     
                     document.getElementById('Kuchen').innerHTML = kuchen
                 }          
             }

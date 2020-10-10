@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Restaurant Siglo XXI</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="icon" href="style/images/favicon.png" />
+        <link rel="stylesheet" href="style/css/main.css" />
+        <link rel="stylesheet" href="style/css/menu.css" />
+        <link rel="stylesheet" href="style/css/menu_mesa.css" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <div class="contenedor">
+                <a href="index.html"><h1>Siglo XII Food</h1></a>
+                <input type="checkbox" id="menu-bar">
+                <label for="menu-bar"><b>&#9776;</b></label>
+                <nav class="menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="login.html">Login Empresarial</a>
+                </nav>
+            </div>
+        </header> 
+        <main class="main">
+            <div class="page-title">Su Pedido:</div>
+            <section class="grid">
+                <!--SECCION DE ENTRADAS-->
+                <div class="seccion" id="Resumen">
+
+                    
+                </div>
+                <div class="total" id="total">
+                    <span>Total: $25000</span>
+                </div>
+                
+                <!--FIN SECCION DE ENTRADAS-->
+            </section>
+            <div class="confirmacion">
+                <h1>¿Confirmar su pedido?</h1>
+                <button type="submit">Confirmar pedido</button>
+            </div>
+        </main>
+        <script src="style/js/crearpedido.js" onload="ListarPedido()"></script>
+        <script src="style/js/app.js"></script>
+        <script src="style/js/push.min.js"></script>
+    </body>
+</html>
