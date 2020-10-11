@@ -162,3 +162,23 @@ function ListarRecetas(){
 
     xhr.send();
 }
+
+function Redirect(){
+
+    var pedido = localStorage.getItem('Recetas')
+
+    if(pedido != undefined && pedido != null){
+        window.location.replace("http://127.0.0.1:8887/confirmacion.html")
+    }
+    else{
+        Push.create("Porfavor, Indiquenos su Pedido",{
+            body: "Ingrese Platos o Bebestibles a su pedido",
+            icon: "style/images/favicon.png",
+            timeout: 8000,
+            onClick: function(){                  
+                this.close();
+            }
+        });
+    }
+    
+}

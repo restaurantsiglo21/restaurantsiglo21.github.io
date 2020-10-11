@@ -26,23 +26,29 @@
         <main class="main">
             <div class="page-title">Su Pedido:</div>
             <section class="grid">
-                <!--SECCION DE ENTRADAS-->
+                <!--SECCION DE RESUMEN-->
                 <div class="seccion" id="Resumen">
 
                     
                 </div>
-                <div class="total" id="total">
-                    <span>Total: $25000</span>
+                <!--SECCION DE RESUMEN-->
+
+                <div class="total" id="precio_total">
+                    <p id="total"></p>
+                </div>
+
+                <div id="volver">
+                    <button class="total" style="background-color: red;" onclick="Volver()">&#8678; Volver</button>
                 </div>
                 
-                <!--FIN SECCION DE ENTRADAS-->
+                
             </section>
             <div class="confirmacion">
                 <h1>¿Confirmar su pedido?</h1>
-                <button type="submit">Confirmar pedido</button>
+                <button type="button" onclick="CrearOrden()">Confirmar pedido</button>
             </div>
         </main>
-        <script src="style/js/crearpedido.js" onload="ListarPedido()"></script>
+        <script src="style/js/crearpedido.js" onload="ListarPedido(), AbrirOrdenes()"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
     </body>

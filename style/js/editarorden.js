@@ -62,6 +62,7 @@ function EditarOrden(){
         peticion.onload = () => {
             var data2 = peticion.response;
             console.log(data2);
+            ListarOrdenes();
         }
         
         peticion.send(datos);
