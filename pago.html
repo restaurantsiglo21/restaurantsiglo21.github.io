@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Restaurant Siglo XXI</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="icon" href="style/images/favicon.png" />
+        <link rel="stylesheet" href="style/css/main.css" />
+        <link rel="stylesheet" href="style/css/menu.css" />
+        <link rel="stylesheet" href="style/css/menu_mesa.css" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <div class="contenedor">
+                <a href="index.html"><h1>Siglo XII Food</h1></a>
+                <input type="checkbox" id="menu-bar">
+                <label for="menu-bar"><b>&#9776;</b></label>
+                <nav class="menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="menu.html">Menú</a>
+                </nav>
+            </div>
+        </header> 
+        <main class="main">
+            <div class="page-title">Su Cuenta:</div>
+            <section class="grid">
+                <!--SECCION DE RESUMEN-->
+                <div class="seccion" id="Resumen">
+                    
+                </div>
+                <!--SECCION DE RESUMEN-->
+
+                <div class="total" id="precio_total">
+                    <p id="total"></p>
+                </div>
+                
+                <label class="" id="label_metodo">Metodo Pago:</label>
+                <select class="" name="metodo" id="metodo">
+                    <option value="EFECTIVO">Efectivo</option>
+                    <option value="CREDITO/DEBITO">Tarjeta Credito/Debito</option>
+                </select>
+
+                <div id="volver">
+                    <button class="total" style="background-color: red;" onclick="Volver()">&#8678; Volver</button>
+                </div>
+            </section>
+
+            <div class="confirmacion">
+                <h1>¿Confirmar su pedido?</h1>
+                <button type="button" onclick="Pagar()">Confirmar pedido</button>
+            </div>
+        </main>
+        <script src="style/js/crearpago.js" onload="ListarPago()"></script>
+        <script src="style/js/app.js"></script>
+        <script src="style/js/push.min.js"></script>
+    </body>
+</html>

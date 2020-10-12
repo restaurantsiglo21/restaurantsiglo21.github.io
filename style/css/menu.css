@@ -53,6 +53,17 @@ header label
     transform: translateX(0%);
 }
 
+#label_metodo{
+    font-size: 20px;
+    margin-left: 10px;
+}
+#metodo{
+    height: 40px;
+    font-size: 25px;
+    width: 40%;
+    margin-left: 10px;
+}
+
 /* RESPONSIVE - RESPONSIVE - RESPONSIVE - RESPONSIVE - */
 /*Minimo 1024px*/
 @media (min-width:1024px){

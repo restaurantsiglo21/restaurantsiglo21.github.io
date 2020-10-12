@@ -22,6 +22,7 @@ function ListarMovimientos(){
                 detalle: data[i].detalle,
                 ingreso: data[i].ingreso,
                 egreso: data[i].egreso,
+                metodo: data[i].metodo,
             }
             movimientos.push(objeto)
         }
@@ -30,9 +31,9 @@ function ListarMovimientos(){
 
         function sortByProperty(property){  
             return function(a,b){  
-            if(a[property] > b[property])  
+            if(a[property] < b[property])  
                 return 1;  
-            else if(a[property] < b[property])  
+            else if(a[property] > b[property])  
                 return -1;  
         
             return 0;  
@@ -43,11 +44,11 @@ function ListarMovimientos(){
         console.log(movimientos);
 
         var output = '';
-        var output = '<tr><th>N° Movimiento</th><th>Fecha</th><th>Detalle</th><th>Ingreso</th><th>Egreso</th></tr>';
+        var output = '<tr><th>N° Movimiento</th><th>Fecha</th><th>Detalle</th><th>Metodo de Pago</th><th>Ingreso</th><th>Egreso</th></tr>';
 
         for (var i = 0; i < movimientos.length; i++) {
 
-            output += '<tr><td>'+movimientos[i].numero+'</td>'+'<td>'+movimientos[i].fecha+'</td>'+'<td>'+movimientos[i].detalle+'</td>'+'<td>'+movimientos[i].ingreso+'</td>'+'<td>'+movimientos[i].egreso+'</td></tr>';      
+            output += '<tr><td>'+movimientos[i].numero+'</td>'+'<td>'+movimientos[i].fecha+'</td>'+'<td>'+movimientos[i].detalle+'</td>'+'<td>'+movimientos[i].metodo+'</td>'+'<td>'+movimientos[i].ingreso+'</td>'+'<td>'+movimientos[i].egreso+'</td></tr>';      
         }
 
         document.getElementById('tabla').innerHTML = output;

@@ -172,9 +172,17 @@ function Volver(){
 }
 
 function AbrirOrdenes(){
-    var ordenes = []
-    ordenes = JSON.stringify(ordenes);
-    localStorage.setItem('Ordenes_en_curso', ordenes)
+
+    var ordenes = localStorage.getItem('Ordenes_en_curso')
+
+    if(ordenes != undefined && ordenes != null){
+
+    }
+    else{
+        var ordenes = []
+        ordenes = JSON.stringify(ordenes);
+        localStorage.setItem('Ordenes_en_curso', ordenes)
+    }
 }
 
 function CrearOrden(){
