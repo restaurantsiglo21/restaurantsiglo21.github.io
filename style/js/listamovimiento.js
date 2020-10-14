@@ -48,7 +48,7 @@ function ListarMovimientos(){
 
         for (var i = 0; i < movimientos.length; i++) {
 
-            output += '<tr><td>'+movimientos[i].numero+'</td>'+'<td>'+movimientos[i].fecha+'</td>'+'<td>'+movimientos[i].detalle+'</td>'+'<td>'+movimientos[i].metodo+'</td>'+'<td>'+movimientos[i].ingreso+'</td>'+'<td>'+movimientos[i].egreso+'</td></tr>';      
+            output += '<tr><td>'+movimientos[i].numero+'</td>'+'<td>'+movimientos[i].fecha.substring(8, 10)+"-"+movimientos[i].fecha.substring(5,7)+"-"+movimientos[i].fecha.substring(0,4)+" / "+movimientos[i].fecha.substring(11,19)+'</td>'+'<td>'+movimientos[i].detalle+'</td>'+'<td>'+movimientos[i].metodo+'</td>'+'<td>'+movimientos[i].ingreso+'</td>'+'<td>'+movimientos[i].egreso+'</td></tr>';      
         }
 
         document.getElementById('tabla').innerHTML = output;
