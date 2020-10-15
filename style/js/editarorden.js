@@ -40,7 +40,6 @@ function EditarOrden(){
         var datos = new FormData();
         datos.append("numero", n_orden)
         datos.append("estado", estado)
-        datos.append("hora_ter", data.hora_ini)
         datos.append("mesa", data.mesa)
 
         var recetas = data.recetas
@@ -52,6 +51,13 @@ function EditarOrden(){
 
         console.log(datos.recetas)
         console.log(data.recetas)
+
+        if(estado == 'ENTREGADA'){
+            var d = new Date();
+            var fecha = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+'T'+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'.026068-03:00' 
+
+            datos.append("hora_ter", fecha)
+        }
 
         var peticion = new XMLHttpRequest();
         peticion.open("PUT", "http://127.0.0.1:8000/api/orden/"+n_orden+"/editar_orden/");

@@ -67,6 +67,10 @@ hr{
     margin-right: 10px;
 }
 
+.unitario{
+    transform: translateY(-25px);
+}
+
 .add {
     font-size: 18px;
     width: 100px;

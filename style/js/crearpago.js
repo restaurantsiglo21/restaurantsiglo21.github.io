@@ -44,18 +44,18 @@ function PedirOrden(numero){
 
         res = data.detalle.split(",");
 
-        document.getElementById('Resumen').innerHTML += '<div class="plato"><span><strong>Resumen Orden '+numero+'</strong></span></div><hr/>'
+        document.getElementById('Resumen').innerHTML += '<div class="plato" id="'+numero+'"><span><strong>Resumen Orden '+numero+'</strong></span></div>'
 
         var recetas = data.recetas;
         console.log(recetas)
 
         for (var i = 0; i < recetas.length; i++) {
             output = ''
-            output += '<div class="plato" id="'+recetas[i]+'"><span><strong>'+res[i]+'</strong></span></div><hr/>'
-            document.getElementById('Resumen').innerHTML += output
+            output += '<div class="plato"><span><strong>'+res[i]+'</strong></span><div class="Receta'+recetas[i]+'"></div></div>'
+            document.getElementById(numero).innerHTML += output
 
             console.log(recetas[i])
-            PreciosUnitarios(recetas[i]);   
+            PreciosUnitarios(recetas[i], recetas[i]);   
         }
         
         var total_pago = localStorage.getItem('Total_Pago');
@@ -89,11 +89,11 @@ function Volver(){
     window.location.replace('http://127.0.0.1:8887/menu.html')
 }
 
-function PreciosUnitarios(numero){
+function PreciosUnitarios(numero_receta, id_contenedor){
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
     
-    xhr.open("GET", "http://127.0.0.1:8000/api/receta/"+numero+"/");
+    xhr.open("GET", "http://127.0.0.1:8000/api/receta/"+numero_receta+"/");
 
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
@@ -104,8 +104,15 @@ function PreciosUnitarios(numero){
 
         var output = ''
 
-        output += '<span class="price"><strong>Precio unitario: '+data.precio+'</strong></span><hr/>'
-        document.getElementById(numero).innerHTML += output
+        output += '<span class="price unitario"><strong>Precio unitario: '+data.precio+'</strong></span><hr/>'
+
+        var divs = document.getElementsByClassName("Receta"+id_contenedor)
+
+        for (var i = 0; i < divs.length; i++) {
+            divs[i].innerHTML = output;
+        }
+
+        //document.getElementsByClassName('.Receta'+id_contenedor).innerHTML += output
     }
 
     xhr.send();
@@ -146,7 +153,7 @@ function Pagar(){
             console.log("Something went wrong!")
         }
         if(xhr.status == 201 || xhr.status == 200 ){
-            localStorage.removeItem('Ordenes_en_curso')
+            
             Push.create("Su pago fue Recibido, Gracias vuelvas prontos",{
                 body: "Gracias por preferirnos",
                 icon: "style/images/favicon.png",
@@ -155,11 +162,62 @@ function Pagar(){
                     this.close();
                 }
             });
-            window.location.replace("http://127.0.0.1:8887/menu.html")
+
+            var ordenes = localStorage.getItem('Ordenes_en_curso')
+            ordenes = JSON.parse(ordenes)
+            
+            for (var i = 0; i < ordenes.length; i++) {
+                PagarOrdenes(ordenes[i], data.numero)
+            }
+
+
+            //window.location.replace("http://127.0.0.1:8887/menu.html");
+            //localStorage.removeItem('Ordenes_en_curso')
         }
     }
 
-    xhr.send(datos);
+    xhr.send(datos)
 }
 
+function PagarOrdenes(numero_orden, numero_movimiento){
 
+    var token = localStorage.getItem("SavesToken", token) 
+    var xhr = new XMLHttpRequest();
+    
+    xhr.open("GET", "http://127.0.0.1:8000/api/orden/"+numero_orden+"/");
+
+    xhr.setRequestHeader('Authorization', 'Token ' + token);
+    xhr.responseType = 'json'
+
+    xhr.onload = () => {
+        var data = xhr.response;
+        console.log(data);
+
+        var peticion = new XMLHttpRequest();
+        peticion.open("PUT", "http://127.0.0.1:8000/api/orden/"+numero_orden+"/editar_orden/");
+
+        peticion.responseType = 'json'
+        peticion.setRequestHeader('Authorization', 'Token ' + token);
+
+        var datos = new FormData();
+        datos.append("mesa", data.mesa)
+        datos.append("movimiento", numero_movimiento)
+
+        var recetas = data.recetas
+
+        for (var i = 0; i < recetas.length; i++) {
+            datos.append("recetas", recetas[i]);
+            console.log(recetas[i])
+        }
+
+        peticion.onload = () => {
+            var data2 = peticion.response;
+            console.log(data2);
+        }
+        
+        peticion.send(datos);
+        
+    }
+
+    xhr.send();
+}

@@ -54,7 +54,6 @@ function ReporteFinanciero() {
 
         saldo_total = ingreso_total - egreso_total
 
-
         var pdf = new jsPDF("p", "pt", "a2");
     
         // source can be HTML-formatted string, or a reference
@@ -147,4 +146,25 @@ function prueba(){
         pdf.save('Test.pdf');
     }, margins);
     
+}
+
+function Tiempo(){
+    var d = new Date();
+    console.log(d.getDate());
+    console.log(d.getMonth())
+    console.log(d.getFullYear())
+
+    console.log(d.getHours());
+    console.log(d.getMinutes())
+    console.log(d.getSeconds())
+
+    console.log(d.getTime())
+    console.log(d.getTimezoneOffset())
+    console.log(d.getUTCHours())
+
+    '2020-10-10T23:47:46.026068-03:00'
+    '2020-10-14T22:10:44.026068-03:00'
+
+    var fecha = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+'T'+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'.026068-03:00'
+    console.log(fecha)
 }
