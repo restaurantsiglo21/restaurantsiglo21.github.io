@@ -170,9 +170,7 @@ function Pagar(){
                 PagarOrdenes(ordenes[i], data.numero)
             }
 
-
-            //window.location.replace("http://127.0.0.1:8887/menu.html");
-            //localStorage.removeItem('Ordenes_en_curso')
+            setTimeout("RedireccionFinal()", 1000)
         }
     }
 
@@ -220,4 +218,9 @@ function PagarOrdenes(numero_orden, numero_movimiento){
     }
 
     xhr.send();
+}
+
+function RedireccionFinal(){
+    localStorage.removeItem('Ordenes_en_curso')
+    window.location.replace("http://127.0.0.1:8887/menu.html");
 }
