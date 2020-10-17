@@ -252,6 +252,7 @@ function CrearOrden(){
                     this.close();
                 }
             });
+            window.location.replace("http://127.0.0.1:8887/menu.html");
         }
 
         localStorage.removeItem('Recetas')
