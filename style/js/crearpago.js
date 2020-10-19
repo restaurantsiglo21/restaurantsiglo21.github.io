@@ -89,6 +89,29 @@ function Volver(){
     window.location.replace('http://127.0.0.1:8887/menu.html')
 }
 
+function SinPago(){
+    
+    var ordenes = localStorage.getItem('Ordenes_en_curso')
+    ordenes = JSON.parse(ordenes)
+    
+    for (var i = 0; i < ordenes.length; i++) {
+        console.log(ordenes[i])
+        CompletarFecha(ordenes[i])
+    }
+
+    Push.create("Orden sin Pagar",{
+        body: "El pago no se ha recibido y la Orden se ha cerrado sin un movimiento asociado",
+        icon: "style/images/favicon.png",
+        timeout: 8000,
+        onClick: function(){                  
+            this.close();
+        }
+    });
+
+    setTimeout('RedireccionFinal()', 800)
+
+}
+
 function PreciosUnitarios(numero_receta, id_contenedor){
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
@@ -111,8 +134,6 @@ function PreciosUnitarios(numero_receta, id_contenedor){
         for (var i = 0; i < divs.length; i++) {
             divs[i].innerHTML = output;
         }
-
-        //document.getElementsByClassName('.Receta'+id_contenedor).innerHTML += output
     }
 
     xhr.send();
@@ -197,9 +218,13 @@ function PagarOrdenes(numero_orden, numero_movimiento){
         peticion.responseType = 'json'
         peticion.setRequestHeader('Authorization', 'Token ' + token);
 
+        var d = new Date();
+        var fecha = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+'T'+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'.026068-03:00'
+
         var datos = new FormData();
         datos.append("mesa", data.mesa)
         datos.append("movimiento", numero_movimiento)
+        datos.append("hora_ter", fecha)
 
         var recetas = data.recetas
 
@@ -219,6 +244,51 @@ function PagarOrdenes(numero_orden, numero_movimiento){
 
     xhr.send();
 }
+
+function CompletarFecha(numero){
+
+    var token = localStorage.getItem("SavesToken", token) 
+    var xhr = new XMLHttpRequest();
+    
+    xhr.open("GET", "http://127.0.0.1:8000/api/orden/"+numero+"/");
+
+    xhr.setRequestHeader('Authorization', 'Token ' + token);
+    xhr.responseType = 'json'
+
+    xhr.onload = () => {
+        var data = xhr.response;
+        console.log(data);
+
+        var token = localStorage.getItem("SavesToken", token) 
+        var http = new XMLHttpRequest();  
+        http.open("PUT", "http://127.0.0.1:8000/api/orden/"+numero+"/editar_orden/");
+        http.setRequestHeader('Authorization', 'Token ' + token);
+        http.responseType = 'json'
+
+        var d = new Date();
+        var fecha = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+'T'+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'.026068-03:00'
+
+        var datos = new FormData();
+        datos.append("mesa", data.mesa)
+        datos.append("hora_ter", fecha)
+
+        var recetas = data.recetas
+
+        for (var i = 0; i < recetas.length; i++) {
+            datos.append("recetas", recetas[i]);
+        }
+
+        http.onload = () => {
+            var data = http.response;
+            console.log(data);
+        }
+
+        http.send(datos)
+    }
+
+    xhr.send()
+}
+
 
 function RedireccionFinal(){
     localStorage.removeItem('Ordenes_en_curso')
