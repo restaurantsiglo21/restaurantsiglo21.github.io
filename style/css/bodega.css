@@ -18,9 +18,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #scrollbar{
-    height: 700px;
     overflow: auto;
-    width: 100%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -121,3 +120,27 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: white;
 }
 
+
+@media screen and  (max-width: 1500px) {
+    .content {
+        display: grid;
+    }
+}
+
+@media screen and  (max-width: 650px) {
+    .bloques {
+        width: 95%;
+        height: 725px;
+        background-color: rgb(105, 82, 7);
+        border-radius: 5px;
+        margin: 5px;
+        border: 2px solid gray;
+    }
+
+    .plato label {
+        padding: 15px;
+    }
+
+    
+
+}

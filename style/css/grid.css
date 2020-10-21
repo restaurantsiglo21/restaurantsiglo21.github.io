@@ -145,10 +145,9 @@ h2,h4{
   }
 }
 
-
-
 /* RESPONSIVE - RESPONSIVE - RESPONSIVE - RESPONSIVE - */
 /*Minimo 1024px*/
+
 @media (min-width: 1024px){
   .columna
   {
@@ -157,7 +156,7 @@ h2,h4{
   /*2 Columnas a partir de 1024px*/
   .dos_columnas .columna
   {
-    width: 50%; /*49%*/
+    width: 50%; /*%*/
   }
   .dos_columnas .columna:nth-child(2n)
   {

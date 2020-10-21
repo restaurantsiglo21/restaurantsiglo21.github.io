@@ -4,6 +4,8 @@
 
 main {
     margin-top: 90px;
+    max-width: 52.6%;
+    margin-left: 25%;
 }
 
 hr{
@@ -31,6 +33,7 @@ hr{
     color: white;
 }
 .grid {
+    justify-content: center;
     display: grid;
     grid-template-columns: 100%;
 } 
@@ -65,10 +68,6 @@ hr{
 .price {
     float: right;
     margin-right: 10px;
-}
-
-.unitario{
-    transform: translateY(-25px);
 }
 
 .add {
@@ -126,6 +125,8 @@ hr{
 
 .confirmacion {
     position: fixed;
+    max-width: 52.6%;
+    max-height: 15%;
     line-height: 15px;
     background-color: #7b6842;
     width: 100%;
@@ -137,12 +138,12 @@ hr{
 .confirmacion button {
     background-color: rgb(24, 148, 13);
     font-size: 18px;
-    width: 300px;
+    width: 40%;
     padding: 18px;
     border: none;
     border-radius: 4px;
     color: white;
-    margin-left: 70px;
+    margin-left: 80px;
 }
 
 .confirmacion button:hover {
@@ -150,6 +151,38 @@ hr{
     background-color: rgb(58, 189, 46);
     border: 1px solid rgb(185, 185, 185);
 }
+
+@media screen and  (max-width: 1500px) {
+    .confirmacion h1{
+        font-size: 20px;
+    }
+}
+
+
+@media screen and  (max-width: 1072px) {
+    
+    main {
+        margin-top: 90px;
+        max-width: 70%;
+        padding-top: 100px;
+        margin: 0px auto;
+    }
+    
+    .confirmacion {
+        justify-content: center;
+        max-width: 70.6%;
+        max-height: 16%;
+    }
+
+    .confirmacion button {
+        width: 60%;
+    }
+
+    .confirmacion h1{
+        font-size: 18px;
+    }
+}
+
 
 
 

@@ -182,13 +182,13 @@ function Pagar(){
                 onClick: function(){                  
                     this.close();
                 }
-            });
+            });      
 
             var ordenes = localStorage.getItem('Ordenes_en_curso')
             ordenes = JSON.parse(ordenes)
             
             for (var i = 0; i < ordenes.length; i++) {
-                PagarOrdenes(ordenes[i], data.numero)
+                PagarOrdenes(ordenes[i], data.numero, data.metodo)
             }
 
             setTimeout("RedireccionFinal()", 1000)
@@ -198,7 +198,7 @@ function Pagar(){
     xhr.send(datos)
 }
 
-function PagarOrdenes(numero_orden, numero_movimiento){
+function PagarOrdenes(numero_orden, numero_movimiento, metodo_pago){
 
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
@@ -214,7 +214,6 @@ function PagarOrdenes(numero_orden, numero_movimiento){
 
         var peticion = new XMLHttpRequest();
         peticion.open("PUT", "http://127.0.0.1:8000/api/orden/"+numero_orden+"/editar_orden/");
-
         peticion.responseType = 'json'
         peticion.setRequestHeader('Authorization', 'Token ' + token);
 
@@ -239,7 +238,31 @@ function PagarOrdenes(numero_orden, numero_movimiento){
         }
         
         peticion.send(datos);
+
         
+        var token = localStorage.getItem("SavesToken", token) 
+        var http = new XMLHttpRequest();
+        http.open("POST", "http://127.0.0.1:8000/api/notificacion/");
+        http.setRequestHeader('Authorization', 'Token ' + token);
+        http.responseType = 'json'
+
+        var notificacion = new FormData()
+        notificacion.append("estado", 'SIN_ATENCION')
+        notificacion.append("mesa", data.mesa)
+
+        if(metodo_pago == 'EFECTIVO'){
+            notificacion.append("detalle", 'Solicita Pago en Efectivo')
+        }else{
+            notificacion.append("detalle", 'El Pago en Linea fue recibido')
+        }
+
+        http.onload = () => {
+            var data = xhr.response;
+            console.log(data);
+        }
+        
+        http.send(notificacion)
+
     }
 
     xhr.send();

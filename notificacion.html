@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Restaurant Siglo XXI</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="icon" href="style/images/favicon.png">
+        <link rel="stylesheet" href="style/css/main.css">
+        <link rel="stylesheet" href="style/css/menu.css">
+        <link rel="stylesheet" href="style/css/banner.css">
+        <link rel="stylesheet" href="style/css/grid.css">
+        <link rel="stylesheet" href="style/css/tabla.css">
+        <link rel="stylesheet" href="style/css/login.css">
+    </head>
+    <body>
+        <header>
+            <div class="contenedor">
+                <a href="index.html"><h1>Siglo XII Food</h1></a>
+                <input type="checkbox" id="menu-bar">
+                <label for="menu-bar"><b>&#9776;</b></label>
+                <nav class="menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="mesas.html">Mesas</a>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main">
+            
+            <div class="contenedor_tabla">
+                    <table id="tabla_notificacion" class="table table-bordered table-dark">
+                        <caption id="table_title">Cola Rapida</caption>
+                        <tr>
+                            <th>N° Orden</th>
+                            <th>Estado</th> 
+                            <th>Hora Inicio</th>
+                            <th>Mesa</th>
+                            <th>Detalle</th>
+                        </tr>
+                        <tr>
+                            <td>Jill</td>
+                            <td>Smith</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Eve</td>
+                            <td>Jackson</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>80</td>
+                            <td>50</td>
+                            <td>50</td>
+                        </tr>
+                    </table>          
+                
+            </div>
+        </main>
+
+        <h4>Recuerda: Las notificaciones que se eliminen pasaran a estar atendidas &#128516</h4> 
+        
+        <footer class="footer" style="position: fixed;">
+            <div class="contenedor">
+                <p class="copy">Restaurant Siglo XII &copy; 2020</p>
+                <div class="redesociales">
+                    <p class = "footer-title">Contactos</p>
+                    <br>
+                    <p>Telefono y Reservas: +569 6745 8243</p>
+                    <p>Email: siglo21food@gmail.com</p>
+                    <p>Atencion al cliente: +569 7856 0423</p>
+                    <br>
+                </div>
+                <div class="redesociales">
+                    <p class = "footer-title">Horarios de Atencion</p>
+                    <br>
+                    <p>Lunes a Viernes: 10:00 am - 9:00 pm</p>
+                    <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
+                    <br>
+                </div>
+                <div class="redesociales">
+                    <p class = "footer-title">Redes Sociales</p>
+                    <br>
+                    <p>Facebook: Siglo21rest</p>
+                    <p>Instragram: restaurant_siglo21</p>
+                    <img src="style/images/facebook.png">
+                    <img src="style/images/twitter.png">
+                </div>
+            </div>
+        </footer>
+        <script src="style/js/app.js"></script>
+        <script src="style/js/push.min.js"></script>
+        <script src="style/js/listanotificacion.js" onload="ListarNotificacion()"></script>
+    </body>
+</html>

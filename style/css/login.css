@@ -5,7 +5,8 @@
     text-align: center;
     margin: auto;
     margin-top: 20%;
-    margin-bottom: 10%;
+    margin-bottom: 29%;
+    padding: 22px;
     background-color: #7b6842;
     width: 75%;
     height: 20%;
@@ -62,10 +63,17 @@ label {
 }
 
 /* Barra Textbox donde se ingresan los datos*/
+form input [type=number]::-webkit-inner-spin-button, 
+form input [type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 form input {
     width: 100%;
     height: 40px;
     font-size: 18px;
+    border-radius: 4px;
 }
 
 .recover{
@@ -130,7 +138,7 @@ form input {
     #LoginFormulario
     {
         margin-top: 12%;
-        margin-bottom: 5%;
+        margin-bottom: 29%;
         width: 60%;
     }
 
