@@ -20,11 +20,12 @@
                 <label for="menu-bar"><b>&#9776;</b></label>
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
-                    <a href="login.html">Login Empresarial</a>
+                    <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesion</a>
                 </nav>
             </div>
         </header>
         <main class="main">
+        <div id="contenido" style="display: none;">
           <h4 class="titulo">Bodega - Inventario Productos</h4>
           <div></div>
           <div id="scrollbar">
@@ -166,6 +167,7 @@
               <button class="boton" type="button" onclick="CrearReceta()">Registrar</button>
             </div>
           </div>
+        </div>  
         </main>
         
         <footer class="footer">
@@ -198,8 +200,9 @@
         </footer>
 
         <script src="style/js/crearproducto.js"></script>
-        <script src="style/js/listaproducto.js" onload="ListarProductos()"></script>
+        <script src="style/js/listaproducto.js" onload="ListarProductos(), Mostrar()"></script>
         <script src="style/js/crearreceta.js"></script>
+        <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

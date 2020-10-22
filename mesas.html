@@ -20,13 +20,14 @@
             <label for="menu-bar"><b>&#9776;</b></label>
             <nav class="menu">
                 <a href="index.html">Inicio</a>
-                <a href="login.html">Login Empresarial</a>
                 <a href="notificacion.html">Notificaciones</a>
+                <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesión</a>
             </nav>
         </div>
     </header>
     <h1 class="subheader">Seleccion y asignacion de mesas</h1>
     <main class="main">
+    <div id="contenido" style="display: none;">
         <div class="contorno">
             <div class="left-bar">
                 <div class="cocina">
@@ -63,6 +64,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </main>
     <!--FOOTER-->
     <footer class="footer">
@@ -93,8 +95,9 @@
             </div>
         </div>
     </footer>
-    <script src="style/js/cargarmesa.js"></script>
+    <script src="style/js/cargarmesa.js" onload="Mostrar()"></script>
     <script src="style/js/editarmesa.js"></script>
+    <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
     <script src="style/js/app.js"></script>
     <script src="style/js/push.min.js"></script>
 </body>

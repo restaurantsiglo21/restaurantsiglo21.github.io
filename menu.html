@@ -24,6 +24,7 @@
             </div>
         </header> 
         <main class="main">
+        <div id="contenido" style="display: none;">
             <div class="page-title">Menú</div>
             <section class="grid">
                 <!--SECCION DE ENTRADAS-->
@@ -492,8 +493,9 @@
                 <h1>¿Confirmar su pedido?</h1>
                 <button type="button" onclick="Redirect()">Confirmar pedido</button>
             </div>
+        </div>
         </main>
-        <script src="style/js/listarecetas.js" onload="ListarRecetas()"></script>
+        <script src="style/js/listarecetas.js" onload="ListarRecetas(), Mostrar()"></script>
         <script src="style/js/crearpedido.js"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>

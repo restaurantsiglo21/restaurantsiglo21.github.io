@@ -1,10 +1,7 @@
 function ListarMovimientos(){
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
-        
-
     xhr.open("GET", "http://127.0.0.1:8000/api/movimiento/");
-
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
 
@@ -60,6 +57,17 @@ function ListarMovimientos(){
     xhr.send();
 }
 
+function Mostrar(){
+    var grupos = localStorage.getItem('Grupos')
+    var formularios = document.getElementById('contenido')
+    grupos = JSON.parse(grupos)
+    
+    for (var i = 0; i < grupos.length; i++) {
+        if(grupos[i] ==  3 || grupos[i] == 5){
+            formularios.style.display = "block"
+        }
+    }
+}
 
 
 

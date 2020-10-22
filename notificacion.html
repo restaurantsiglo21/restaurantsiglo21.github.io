@@ -24,12 +24,13 @@
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
                     <a href="mesas.html">Mesas</a>
+                    <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesión</a>
                 </nav>
             </div>
         </header>
         
         <main class="main">
-            
+        <div id="contenido" style="display: none;">
             <div class="contenedor_tabla">
                     <table id="tabla_notificacion" class="table table-bordered table-dark">
                         <caption id="table_title">Cola Rapida</caption>
@@ -64,6 +65,7 @@
                     </table>          
                 
             </div>
+        </div>
         </main>
 
         <h4>Recuerda: Las notificaciones que se eliminen pasaran a estar atendidas &#128516</h4> 
@@ -98,6 +100,7 @@
         </footer>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
-        <script src="style/js/listanotificacion.js" onload="ListarNotificacion()"></script>
+        <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
+        <script src="style/js/listanotificacion.js" onload="ListarNotificacion(), Mostrar()"></script>
     </body>
 </html>

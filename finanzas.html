@@ -27,11 +27,12 @@
                 <label for="menu-bar"><b>&#9776;</b></label>
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
-                    <a href="login.html">Login Empresarial</a>
+                    <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesion</a>
                 </nav>
             </div>
         </header>
         <main class="main">
+          <div id="contenido" style="display: none;">
           <h4 class="titulo"><b>Finanzas - Movimientos<b></h4>
           <div></div>
           <div id="scrollbar" style="font-size: 15px;">
@@ -99,33 +100,35 @@
             </table>  
           </div>
 
-          <div class="content" id="mantenedores">
-            <div class="product bloque">
-              <h1 class="subheader">Registrar Movimiento</h1>
-              <form id="movimiento_form">
-                  <span id="alerta"></span>
-                  <span id="alerta_2"></span>
-                  <label class="labels">Detalle:</label>
-                  <input class="texto" type="text" name="detalle" id="detalle_movimiento" required placeholder="Ingresa el Detalle o Razon del movimiento"/>
-                  <label class="labels" id="label_metodo">Metodo Pago:</label>
-                  <select class="texto" name="metodo" id="metodo_movimiento">
-                      <option value="EFECTIVO">Efectivo</option>
-                      <option value="CREDITO/DEBITO">Tarjeta Credito/Debito</option>
-                  </select>
-                  <label class="labels">Ingreso:</label>
-                  <input class="texto" type="number" name="ingreso" id="ingreso_movimiento" required placeholder="Pesos ($)"/>
-                  <label class="labels">Egreso:</label>
-                  <input class="texto" type="number" name="egreso" id="egreso_movimiento" required placeholder="Pesos ($)"/>
-                  <button class="boton" type="button" onclick="CrearMovimiento()">Registrar nuevo +</button>
-              </form>
-            </div>
+          
+            <div class="content" id="mantenedores">
+              <div class="product bloque">
+                <h1 class="subheader">Registrar Movimiento</h1>
+                <form id="movimiento_form">
+                    <span id="alerta"></span>
+                    <span id="alerta_2"></span>
+                    <label class="labels">Detalle:</label>
+                    <input class="texto" type="text" name="detalle" id="detalle_movimiento" required placeholder="Ingresa el Detalle o Razon del movimiento"/>
+                    <label class="labels" id="label_metodo">Metodo Pago:</label>
+                    <select class="texto" name="metodo" id="metodo_movimiento">
+                        <option value="EFECTIVO">Efectivo</option>
+                        <option value="CREDITO/DEBITO">Tarjeta Credito/Debito</option>
+                    </select>
+                    <label class="labels">Ingreso:</label>
+                    <input class="texto" type="number" name="ingreso" id="ingreso_movimiento" required placeholder="Pesos ($)"/>
+                    <label class="labels">Egreso:</label>
+                    <input class="texto" type="number" name="egreso" id="egreso_movimiento" required placeholder="Pesos ($)"/>
+                    <button class="boton" type="button" onclick="CrearMovimiento()">Registrar nuevo +</button>
+                </form>
+              </div>
 
-            <div class="plato bloque">
-            <h1 class="subheader">Generar Reporte</h1>
-              <form id="">
-                  <button class="boton_reporte" type="button" onclick="ReporteFinanciero()">Financiero</button>
-                  <button class="boton_reporte" type="button" onclick="PlatosVendidos()">Atencion al Cliente</button>
-              </form>
+              <div class="plato bloque">
+                <h1 class="subheader">Generar Reporte</h1>
+                  <form id="">
+                      <button class="boton_reporte" type="button" onclick="ReporteFinanciero()">Financiero</button>
+                      <button class="boton_reporte" type="button" onclick="PlatosVendidos()">Atencion al Cliente</button>
+                  </form>
+              </div>
             </div>
           </div>
         </main>
@@ -159,9 +162,10 @@
             </div>
         </footer>
 
-        <script src="style/js/listamovimiento.js" onload="ListarMovimientos()"></script>
+        <script src="style/js/listamovimiento.js" onload="ListarMovimientos(), Mostrar()"></script>
         <script src="style/js/crearmovimiento.js"></script>
         <script src="style/js/reporte.js"></script>
+        <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

@@ -182,3 +182,15 @@ function Redirect(){
     }
     
 }
+
+function Mostrar(){
+    var grupos = localStorage.getItem('Grupos')
+    var formularios = document.getElementById('contenido')
+    grupos = JSON.parse(grupos)
+    
+    for (var i = 0; i < grupos.length; i++) {
+        if(grupos[i] == 3 || grupos[i] == 6){
+            formularios.style.display = "block"
+        }
+    }
+}

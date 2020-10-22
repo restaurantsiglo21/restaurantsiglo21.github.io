@@ -22,15 +22,13 @@
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
                 <nav class="menu">
-                    <a href="index.html">Inicio</a>
-                    <a href="mesas.html">Mesas</a>
-                    <a href="login.html">Login Empresarial</a>
+                    <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesión</a>
                 </nav>
             </div>
         </header>
         
         <main class="main">
-            
+        <div id="contenido" style="display: none;">
             <div class="contenedor_tabla">
                     <table id="cola" class="table table-bordered table-dark">
                         <caption id="table_title">Cola Rapida</caption>
@@ -111,7 +109,7 @@
                     <button class="btn btn-primary" type="button" id="boton_estado" onclick="EditarOrden()">Cambiar Estado</button>  
             </form>
             
-  
+        </div>
         </main>
         
         <footer class="footer">
@@ -144,7 +142,8 @@
         </footer>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
-        <script src="style/js/listaorden.js" onload="ListarOrdenes()"></script>
+        <script src="style/js/listaorden.js" onload="ListarOrdenes(), Mostrar()"></script>
+        <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
         <script src="style/js/editarorden.js"></script>
     </body>
 </html>
