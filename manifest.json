@@ -6,11 +6,11 @@
         "sizes": "125x125",
         "type": "image/png"
       },{
-        "src": "images/favicon152x152.png",
+        "src": "/style/images/favicon152x152.png",
           "sizes": "152x152",
           "type": "image/png"
       },{
-        "src": "images/favicon.png",
+        "src": "/style/images/favicon.png",
           "sizes": "184x176",
           "type": "image/png"
       }],
