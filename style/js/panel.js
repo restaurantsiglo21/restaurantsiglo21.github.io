@@ -1,3 +1,4 @@
+//Permite crear paneles animados desplegables
 var coll = document.getElementsByClassName("collapsible");
 var i;
 

@@ -17,10 +17,12 @@
                 <a href="index.html"><h1>Siglo XII Food</h1></a>
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
+                <!--Menu Superior-->
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
                     <a href="menu.html">Menú</a>
                 </nav>
+                <!--FIN Menu Superior-->
             </div>
         </header> 
         <main class="main">
@@ -32,29 +34,40 @@
                 </div>
                 <!--SECCION DE RESUMEN-->
 
+                <!--Total Orden-->
                 <div class="total" id="precio_total">
                     <p id="total"></p>
                 </div>
+                <!--FIN Total Orden-->
                 
+                <!--Seleccion de Metodo de Pago-->
                 <label class="" id="label_metodo">Metodo Pago:</label>
                 <select class="" name="metodo" id="metodo">
                     <option value="EFECTIVO">Efectivo</option>
                     <option value="CREDITO/DEBITO">Tarjeta Credito/Debito</option>
                 </select>
+                <!--FIN Seleccion de Metodo de Pago-->
 
+                <!--Boton para volver a vista anterior-->
                 <div id="volver">
                     <button class="total" style="background-color: red;" onclick="Volver()">&#8678; Volver</button>
                     <button class="total" style="background-color: red;" onclick="SinPago()">&#8678; Orden sin Pago</button>
                 </div>
+                <!--FIN Boton para volver a vista anterior-->
             </section>
 
+            <!--Boton de confirmacion-->
             <div class="confirmacion">
                 <h1>¿Su cuenta esta en orden?</h1>
                 <button type="button" onclick="Pagar()">Confirmar Pago</button>
             </div>
+            <!--FIN Boton de confirmacion-->
         </main>
+
+        <!--Carga Script JS-->
         <script src="style/js/crearpago.js" onload="ListarPago()"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
+        <!--FIN Carga Script JS-->
     </body>
 </html>

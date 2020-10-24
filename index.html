@@ -19,23 +19,26 @@
                 <a href="index.html"><h1>Siglo XII Food</h1></a>
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
+                <!--Menu Superior / Menu en Canvas en Version Movil-->
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
                     <a href="login.html">Login Empresarial</a>
                     <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesion</a>
                 </nav>
+                <!--FIN Menu en Header-->
             </div>
         </header>
-        
+
+        <!--Banner Principal de la Pagina-->
         <main class="main">
             <section id="banner">
                 <h1 class="banner_title">Restaurant Siglo XII</h1>
                 <h1 class="banner_sub">"La tradición por sobre todo"</h1>
                 <img src="style/images/banner.jpg">
             </section>
-  
+        <!-- FIN Banner Principal de la Pagina-->
             
-            
+        <!-- Seccion que contiene 4 tarjetas con Platos Destacados del Local-->
             <div class="fila cuatro_columnas">
                 <h1 class="featured">Platos Destacados</h1>
                 <div class="columna">
@@ -59,7 +62,9 @@
                     <p>"Todo el sabor del mar concentrado en un caldo que llena el alma"</p>
                 </div>
             </div>
-
+        <!-- FIN Seccion que contiene 4 tarjetas con Platos Destacados del Local-->
+        
+        <!-- Seccion que contiene 3 tarjetas con la historia del local-->
             <div class="fila tres_columnas">
                 <h1 class="" id="column3_title">Nuestra Historia</h1>
                 <div class="columna">
@@ -78,12 +83,13 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac mollis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac mollis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
                 </div>
             </div>
-  
+        <!-- Seccion que contiene 3 tarjetas con la historia del local-->    
         </main>
-        
+     
         <footer class="footer">
             <div class="contenedor">
                 <p class="copy">Restaurant Siglo XII &copy; 2020</p>
+                <!--Informacion contacto del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Contactos</p>
                     <br>
@@ -92,6 +98,9 @@
                     <p>Atencion al cliente: +569 7856 0423</p>
                     <br>
                 </div>
+                <!--FIN Informacion contacto del local-->
+
+                <!--Horarios de Atencion del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Horarios de Atencion</p>
                     <br>
@@ -99,6 +108,9 @@
                     <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
                     <br>
                 </div>
+                <!--FIN Horarios de Atencion del local-->
+
+                <!--Redes Sociales de local-->
                 <div class="redesociales">
                     <p class = "footer-title">Redes Sociales</p>
                     <br>
@@ -107,10 +119,14 @@
                     <img src="style/images/facebook.png">
                     <img src="style/images/twitter.png">
                 </div>
+                <!--FIN Redes Sociales de local-->
             </div>
         </footer>
+
+        <!--Carga de Scripts JS-->
         <script src="style/js/app.js"></script>
         <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
         <script src="style/js/push.min.js"></script>
+        <!--FIN Carga Scripts JS-->
     </body>
 </html>

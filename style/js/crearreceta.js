@@ -1,4 +1,6 @@
+//Crea un receta con los datos del formulario HTML
 function CrearReceta(){
+    //Recoge Datos del Formulario
     var nombre_receta = document.getElementById("nombre_receta").value
     var preparacion_receta = document.getElementById("preparacion_receta").value
     var grupo_receta = document.getElementById("grupo_receta").value
@@ -7,6 +9,7 @@ function CrearReceta(){
     var productos = document.getElementById("input_productos").value
     var productos_format = ''
 
+    //Formatea productos seleccionados previamente 
     for (var i = 0; i < productos.length; i++) {
         if(i != (productos.length - 1)){
             productos_format += productos[i]
@@ -34,14 +37,15 @@ function CrearReceta(){
     console.log(productos)
     console.log(datos.productos)
 
+    //Trae Token de Autorización y Ajusta Parametros de la peticion
     var xhr = new XMLHttpRequest();
-    
+    var token = localStorage.getItem("SavesToken", token) 
     xhr.open("POST", "http://127.0.0.1:8000/api/receta/");
-
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
 
     xhr.onload = () => {
+        //Recoge la respuesta de la peticion
         var data = xhr.response;
         console.log(data);
 
@@ -56,6 +60,7 @@ function CrearReceta(){
     xhr.send(datos);
 }
 
+//Permite seleccionar de manera rapida los ingredientes de la receta, añadiendo sus numeros al campo de ingredientes
 function LlenarIngredientes(numero){
 
     var previo = document.getElementById('input_productos').value

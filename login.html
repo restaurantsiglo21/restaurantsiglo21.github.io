@@ -18,12 +18,15 @@
                 <a href="index.html"><h1>Siglo XII Food</h1></a>
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
+                <!--Menu Superior-->
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
                 </nav>
+                <!--FIN Menu Superior-->
             </div>
         </header>
         
+        <!--Formulario de Inicio de Sesion en sitio-->
         <main>
             <section id="LoginFormulario">
                     <h2 class="login_title">Inicio de Sesion</h2>
@@ -35,18 +38,21 @@
                             <div class="form_group">
                                 <input type="password" name="password" required id="id_password" placeholder=" Contraseña">
                             </div>
+                            <!--Recuperacion de Contraseña-->
                             <h4 class="recover">¿Haz olvidado tu contraseña? Click <a class="link" href='http://127.0.0.1:8000/api/reset-password/'>Aqui</a></h4>
+                            <!--FIN Recuperacion de Contraseña-->
                             <span id="alerta" style="color: red;"></span>
                             <button class="btnlogin" type="submit">Ingresar</button>  
                         </form>
                     </div>  
             </section>
-  
         </main>
+        <!--FIN Formulario de Inicio de Sesion en sitio-->
         
         <footer class="footer" style="position: fixed;">
             <div class="contenedor">
                 <p class="copy">Restaurant Siglo XII &copy; 2020</p>
+                <!--Informacion contacto local-->
                 <div class="redesociales">
                     <p class = "footer-title">Contactos</p>
                     <br>
@@ -55,6 +61,9 @@
                     <p>Atencion al cliente: +569 7856 0423</p>
                     <br>
                 </div>
+                <!--FIN Informacion contacto local-->
+
+                <!--Horario atencion de local-->
                 <div class="redesociales">
                     <p class = "footer-title">Horarios de Atencion</p>
                     <br>
@@ -62,6 +71,9 @@
                     <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
                     <br>
                 </div>
+                <!--FIN Horario atencion de local-->
+
+                <!--Redes Sociales de local-->
                 <div class="redesociales">
                     <p class = "footer-title">Redes Sociales</p>
                     <br>
@@ -70,14 +82,17 @@
                     <img src="style/images/facebook.png">
                     <img src="style/images/twitter.png">
                 </div>
+                <!-- FIN Redes Sociales de local-->
             </div>
         
         </footer>
 
+        <!--Carga Script JS-->
         <script src="style/js/login2.js"></script>
         <script src="style/js/logout2.js"></script>
         <script src="style/js/listacliente.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="style/js/panel.js"></script>
+        <!--Fin Carga Script JS-->
     </body>
 </html>

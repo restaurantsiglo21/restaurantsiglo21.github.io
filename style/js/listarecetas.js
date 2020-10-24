@@ -1,13 +1,14 @@
+//Trae un listado de productos presentes en la API para su despliegue en una tabla en HTML
 function ListarRecetas(){
+    //Trae Token de Autorizacion y ajusta parametros de peticion
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
-        
     xhr.open("GET", "http://127.0.0.1:8000/api/receta/");
-
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
 
     xhr.onload = () => {
+        //Recoge la respuesta de la peticion
         var data = xhr.response;
         console.log(data);
 
@@ -29,6 +30,7 @@ function ListarRecetas(){
 
         console.log(recetas);
 
+        //Ordena los elementos de un arreglo de menor a mayor
         function sortByProperty(property){  
             return function(a,b){  
             if(a[property] > b[property])  
@@ -66,6 +68,7 @@ function ListarRecetas(){
         var tortas = '';
         var kuchen = '';
 
+        //Genera Menú en HTML y asigna categoria en base a grupo y subgrupo del plato
         for (var i = 0; i < recetas.length; i++) {
 
             if(recetas[i].grupo == 'ENTRADA'){
@@ -163,6 +166,7 @@ function ListarRecetas(){
     xhr.send();
 }
 
+//Notifica a usuario que se esta enviando una orden vacia
 function Redirect(){
 
     var pedido = localStorage.getItem('Recetas')
@@ -183,6 +187,7 @@ function Redirect(){
     
 }
 
+//Muestra el contenido del HTML en base al grupo del usuario
 function Mostrar(){
     var grupos = localStorage.getItem('Grupos')
     var formularios = document.getElementById('contenido')

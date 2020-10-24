@@ -1,14 +1,14 @@
+//Genera y Descarga Reporte Financiero en formato PDF
 function ReporteFinanciero() {
-
+    //Trae Token de Autorizacion y ajusta parametros de peticion
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
-        
     xhr.open("GET", "http://127.0.0.1:8000/api/movimiento/");
-
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
 
     xhr.onload = () => {
+        //Recoge la respuesta de la peticion
         var data = xhr.response;
         console.log(data);
 
@@ -29,6 +29,7 @@ function ReporteFinanciero() {
 
         console.log(movimientos);
 
+        //Ordena los elementos de un arreglo de menor a mayor
         function sortByProperty(property){  
             return function(a,b){  
             if(a[property] < b[property])  
@@ -47,6 +48,7 @@ function ReporteFinanciero() {
         var egreso_total = 0
         var saldo_total = 0
         
+        //Calcula Metricas de Reporte
         for (var i = 0; i < data.length; i++) {
             ingreso_total += movimientos[i].ingreso 
             egreso_total += movimientos[i].egreso 
@@ -54,20 +56,13 @@ function ReporteFinanciero() {
 
         saldo_total = ingreso_total - egreso_total
 
+        //Crea elemento de tipo jsPDF
         var pdf = new jsPDF("p", "pt", "a1");
     
-        // source can be HTML-formatted string, or a reference
-        // to an actual DOM element from which the text will be scraped.
         source = $('#scrollbar')[0];
 
-        // we support special element handlers. Register them with jQuery-style 
-        // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
-        // There is no support for any other type of selectors 
-        // (class, of compound) at this time.
         specialElementHandlers = {
-            // element with id of "bypass" - jQuery style selector
             '#bypassme': function (element, renderer) {
-                // true = "handled elsewhere, bypass text extraction"
                 return true
             }
         };
@@ -79,19 +74,16 @@ function ReporteFinanciero() {
             width: 500,
         };
 
-        // all coords and widths are in jsPDF instance's declared units
-        // 'inches' in this case
         pdf.fromHTML(
-        source, // HTML string or DOM elem ref.
-        margins.left, // x coord
-        margins.top, { // y coord
-            'width': margins.width, // max width of content on PDF
+        source, 
+        margins.left, 
+        margins.top, { 
+            'width': margins.width, 
             'elementHandlers': specialElementHandlers
         },
 
+        //Genera PDF y lo descarga
         function (dispose) {
-            // dispose: object with X, Y of the last line add to the PDF 
-            //          this allow the insertion of new lines after html
             pdf.text(1300, 40, "RESUMEN FINANCIERO\n\nTotales Generales:\nIngreso Total: "+ingreso_total+"\n"+"Egreso Total: "+egreso_total+"\n"+"Saldo Final: "+saldo_total)
             
             pdf.save('Resumen_Financiero.pdf');
@@ -101,53 +93,7 @@ function ReporteFinanciero() {
     xhr.send();
 }
 
-function prueba(){
-   
-    var pdf = new jsPDF("p", "pt", "a2");
-    
-    // source can be HTML-formatted string, or a reference
-    // to an actual DOM element from which the text will be scraped.
-    source = $('#scrollbar')[0];
-
-    // we support special element handlers. Register them with jQuery-style 
-    // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
-    // There is no support for any other type of selectors 
-    // (class, of compound) at this time.
-    specialElementHandlers = {
-        // element with id of "bypass" - jQuery style selector
-        '#bypassme': function (element, renderer) {
-            // true = "handled elsewhere, bypass text extraction"
-            return true
-        }
-    };
-
-    margins = {
-        top: 10,
-        bottom: 10,
-        left: 10,
-        width: 500,
-    };
-
-    // all coords and widths are in jsPDF instance's declared units
-    // 'inches' in this case
-    pdf.fromHTML(
-    source, // HTML string or DOM elem ref.
-    margins.left, // x coord
-    margins.top, { // y coord
-        'width': margins.width, // max width of content on PDF
-        'elementHandlers': specialElementHandlers
-    },
-
-    function (dispose) {
-        // dispose: object with X, Y of the last line add to the PDF 
-        //          this allow the insertion of new lines after html
-        pdf.text(920, 40, "RESUMEN FINANCIERO\n\nTotales Generales:")
-        
-        pdf.save('Test.pdf');
-    }, margins);
-    
-}
-
+//Operaciones con tiempo y fecha
 function Tiempo(){
     var d = new Date();
     console.log(d.getDate());
@@ -171,17 +117,17 @@ function Tiempo(){
     console.log(fecha)
 }
 
+//Genera y Descarga Reporte de Platos Vendidos en formato PDF
 function PlatosVendidos(){
-
+    //Trae Token de Autorizacion y ajusta parametros de peticion
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
-        
     xhr.open("GET", "http://127.0.0.1:8000/api/receta/");
-
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
 
     xhr.onload = () => {
+        //Recoge la respuesta de la peticion
         var data = xhr.response;
         console.log(data); 
 
@@ -194,7 +140,7 @@ function PlatosVendidos(){
 
         localStorage.setItem('Indices',JSON.stringify(numeros_recetas))
 
-
+        //Trae Token de Autorizacion y ajusta parametros de segunda peticion
         var token = localStorage.getItem("SavesToken", token) 
         var http = new XMLHttpRequest();   
         http.open("GET", "http://127.0.0.1:8000/api/orden/");
@@ -202,6 +148,7 @@ function PlatosVendidos(){
         http.responseType = 'json'
 
         http.onload = () => {
+            //Recoge la respuesta de la segunda peticion
             var data = http.response;
             console.log(data);
 
@@ -226,6 +173,7 @@ function PlatosVendidos(){
 
             var diccionario = []
 
+            //Crea diccionario y asigna indices en base a la ID del arreglo
             for (var i = 0; i < platos.length; i++) {
 
                 var plato = new Object();
@@ -275,16 +223,17 @@ function PlatosVendidos(){
     ClientesAtendidos();
 }
 
+//Genera y Descarga Reporte de Atencion al Cliente en formato PDF
 function ClientesAtendidos(){
+    //Trae Token de Autorizacion y ajusta parametros de peticion
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
-        
     xhr.open("GET", "http://127.0.0.1:8000/api/movimiento/");
-
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
 
     xhr.onload = () => {
+        //Recoge la respuesta de la peticion
         var data = xhr.response;
         console.log(data); 
 
@@ -308,22 +257,23 @@ function ClientesAtendidos(){
 
 }
 
+//Genera Reporte de Tiempos de Atencion al Cliente
 function TiemposAtencion(){
-
+    //Trae Token de Autorizacion y ajusta parametros de peticion
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
-        
     xhr.open("GET", "http://127.0.0.1:8000/api/orden/");
-
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
 
     xhr.onload = () => {
+        //Recoge la respuesta de la peticion
         var data = xhr.response;
         console.log(data);
 
         var tiempos = []
 
+        //Formatea tiempos de atencion
         for (var i = 0; i < data.length; i++) {
             
             var inicio = data[i].hora_ini 
@@ -351,6 +301,7 @@ function TiemposAtencion(){
             tiempos.push(milisegundos)            
         }
 
+        //Calcula Tiempos de Atencion
         var tiempo_calculado = []
 
         for (var i = 0; i < tiempos.length; i++) {
@@ -367,6 +318,7 @@ function TiemposAtencion(){
         var suma = 0;
         var media = 0;
 
+        //Calcula mayor y menor tiempo de atencion
         for (var i = 0; i < tiempo_calculado.length; i++) {
             if(tiempo_calculado[i] > max){
                 max = tiempo_calculado[i]
@@ -412,17 +364,17 @@ function TiemposAtencion(){
 
 }
 
+//Añade reporte de tiempos de atencion al cliente a Reporte de Atencion al Cliente
 function RenderPDF(){
-
+    //Trae Token de Autorizacion y ajusta parametros de peticion
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
-        
     xhr.open("GET", "http://127.0.0.1:8000/api/receta/");
-
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
 
     xhr.onload = () => {
+        //Recoge la respuesta de peticion
         var data = xhr.response;
         console.log(data);
 
@@ -436,6 +388,7 @@ function RenderPDF(){
         var max_seg = localStorage.getItem('max_seg')
         var media = localStorage.getItem('media')
 
+        //Genera y formatea reporte
         var pdf = new jsPDF();
     
         pdf.setFontSize(12);
@@ -488,8 +441,10 @@ function RenderPDF(){
             
         }
         
+        //Descarga reporte en formato PDF
         pdf.save('Resumen-Atencion_al_Cliente.pdf');
 
+        //Limpia las todas las variables de calculo
         localStorage.removeItem('Indices')
         localStorage.removeItem('Platos_Vendidos')
         localStorage.removeItem('Platos_Totales')

@@ -17,10 +17,12 @@
                 <a href="index.html"><h1>Siglo XII Food</h1></a>
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
+                <!--Menu Superior-->
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
                     <a href="menu.html">Menú</a>
                 </nav>
+                <!--FIN Menu Superior-->
             </div>
         </header> 
         <main class="main">
@@ -29,29 +31,37 @@
             <section class="grid">
                 <!--SECCION DE RESUMEN-->
                 <div class="seccion" id="Resumen">
-
-                    
+ 
                 </div>
                 <!--SECCION DE RESUMEN-->
 
+                <!--Total Orden-->
                 <div class="total" id="precio_total">
                     <p id="total"></p>
                 </div>
+                <!--FIN Total Orden-->
 
+                <!--Boton para volver a vista anterior-->
                 <div id="volver">
                     <button class="total" style="background-color: red;" onclick="Volver()">&#8678; Volver</button>
                 </div>
-                
+                <!--FIN Boton para volver a vista anterior-->
                 
             </section>
+
+            <!--Boton Confirmacion-->
             <div class="confirmacion">
                 <h1>¿Confirmar su pedido?</h1>
                 <button type="button" onclick="CrearOrden()">Confirmar pedido</button>
             </div>
+            <!--FIN Boton Confirmacion-->
         
         </main>
+
+        <!--Carga Script JS-->
         <script src="style/js/crearpedido.js" onload="ListarPedido(), AbrirOrdenes()"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
+        <!--FIN Carga Script JS-->
     </body>
 </html>

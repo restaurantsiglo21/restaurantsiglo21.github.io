@@ -21,15 +21,20 @@
                 <a href="index.html"><h1>Siglo XII Food</h1></a>
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
+                <!--Menu Superior-->
                 <nav class="menu">
                     <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesión</a>
                 </nav>
+                <!--FIN Menu Superior-->
             </div>
         </header>
         
         <main class="main">
+        <!--Contenedor Tablas con Cola de Ordenes de Cocina y Formulario cambio de Estado de Orden. Oculto por Defecto-->
         <div id="contenido" style="display: none;">
+            <!--Tabla de Ordenes en cola -->
             <div class="contenedor_tabla">
+                    <!--Cola Rapida-->
                     <table id="cola" class="table table-bordered table-dark">
                         <caption id="table_title">Cola Rapida</caption>
                         <tr>
@@ -60,8 +65,10 @@
                             <td>50</td>
                             <td>50</td>
                         </tr>
-                    </table>          
+                    </table>
+                    <!--FIN Cola Rapida-->          
                 
+                    <!--Cola Especial--> 
                     <table id="cola_2" class="table table-bordered table-dark">
                         <caption id="table_title2">Cola Especial</caption>
                         <tr>
@@ -92,11 +99,12 @@
                             <td>50</td>
                             <td>50</td>
                         </tr>
-                    </table>   
-                
+                    </table>
+                    <!--FIN Cola Especial-->    
             </div>
+            <!--FIN Tabla de Ordenes en cola -->
 
-            
+            <!--Formulario de cambio de Estado de Orden-->
             <form class="form_orden">
                     <label for="n_orden" class="label_orden">Actualizar Orden:</label>
                     <input type="text" class="form-control" id="n_orden" name="n_orden" required placeholder="Numenro de Orden">
@@ -108,13 +116,15 @@
                     </select>
                     <button class="btn btn-primary" type="button" id="boton_estado" onclick="EditarOrden()">Cambiar Estado</button>  
             </form>
-            
+            <!--FIN Formulario de cambio de Estado de Orden-->
         </div>
+        <!--FIN Contenedor Tablas con Cola de Ordenes de Cocina y Formulario cambio de Estado de Orden. Oculto por Defecto-->
         </main>
         
         <footer class="footer">
             <div class="contenedor">
                 <p class="copy">Restaurant Siglo XII &copy; 2020</p>
+                <!--Informacion contacto del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Contactos</p>
                     <br>
@@ -123,6 +133,9 @@
                     <p>Atencion al cliente: +569 7856 0423</p>
                     <br>
                 </div>
+                <!--FIN Informacion contacto del local-->
+
+                <!--Horarios de Atencion del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Horarios de Atencion</p>
                     <br>
@@ -130,6 +143,9 @@
                     <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
                     <br>
                 </div>
+                <!--FIN Horarios de Atencion del local-->
+
+                <!--Redes Sociales de local-->
                 <div class="redesociales">
                     <p class = "footer-title">Redes Sociales</p>
                     <br>
@@ -138,12 +154,16 @@
                     <img src="style/images/facebook.png">
                     <img src="style/images/twitter.png">
                 </div>
+                <!--FIN Redes Sociales de local-->
             </div>
         </footer>
+
+        <!--Carga de Script JS-->
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="style/js/listaorden.js" onload="ListarOrdenes(), Mostrar()"></script>
         <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
         <script src="style/js/editarorden.js"></script>
+        <!--FIN Carga de Script JS-->
     </body>
 </html>

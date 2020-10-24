@@ -18,13 +18,16 @@
                 <a href="index.html"><h1>Siglo XII Food</h1></a>
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
+                <!--Menu Superior-->
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
                     <a href="pago.html">Pide Tu Cuenta!</a>
                 </nav>
+                <!--FIN Menu Superior-->
             </div>
         </header> 
         <main class="main">
+        <!--Contenedor con Menú de Platos ofrecidos por el local. Oculto por defecto-->
         <div id="contenido" style="display: none;">
             <div class="page-title">Menú</div>
             <section class="grid">
@@ -268,7 +271,6 @@
                     </div>
                     <hr/>
                 </div>
-                
                 <!--FIN SECCION DE PLATOS DE FONDO-->
 
                 <!--SECCION DE APERITIVOS-->
@@ -423,7 +425,6 @@
                     </div>
                     <hr/>
                 </div>
-                
                 <!--FIN SECCION DE BEBESTIBLE-->
 
                 <!--SECCION DE POSTRES-->
@@ -495,10 +496,14 @@
                 <button type="button" onclick="Redirect()">Confirmar pedido</button>
             </div>
         </div>
+        <!--FIN Contenedor con Menú de Platos ofrecidos por el local. Oculto por defecto-->
         </main>
+
+        <!--Carga de Scripts JS-->
         <script src="style/js/listarecetas.js" onload="ListarRecetas(), Mostrar()"></script>
         <script src="style/js/crearpedido.js"></script>
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
+        <!--FIN Carga de Scripts JS-->
     </body>
 </html>

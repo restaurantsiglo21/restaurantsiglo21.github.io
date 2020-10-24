@@ -25,16 +25,20 @@
                 <a href="index.html"><h1>Siglo XII Food</h1></a>
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
+                <!--Menu Superior-->
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
                     <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesion</a>
                 </nav>
+                <!--FIN Menu Superior-->
             </div>
         </header>
         <main class="main">
+          <!--Contenedor con Tabla de Movimientos Financieros, Ingreso de Moviminetos y Reporteria. Oculto por defecto-->
           <div id="contenido" style="display: none;">
           <h4 class="titulo"><b>Finanzas - Movimientos<b></h4>
           <div></div>
+          <!--Tabla de Movimientos Financieros-->
           <div id="scrollbar" style="font-size: 15px;">
             <table class="table table-striped table-dark" id="tabla">
               <thead>
@@ -99,9 +103,11 @@
               </tbody>
             </table>  
           </div>
-
+          <!--FIN Tabla Movimientos Financieros-->
           
+          <!--Seccion Mantenedor de Moviminetos y Reporteria-->
             <div class="content" id="mantenedores">
+              <!--Mantenedor Movimientos Financieros-->
               <div class="product bloque">
                 <h1 class="subheader">Registrar Movimiento</h1>
                 <form id="movimiento_form">
@@ -121,7 +127,9 @@
                     <button class="boton" type="button" onclick="CrearMovimiento()">Registrar nuevo +</button>
                 </form>
               </div>
+              <!--Mantenedor Movimientos Financieros-->
 
+              <!--Reportes Financieros y Atencion al Cliente-->
               <div class="plato bloque">
                 <h1 class="subheader">Generar Reporte</h1>
                   <form id="">
@@ -129,13 +137,17 @@
                       <button class="boton_reporte" type="button" onclick="PlatosVendidos()">Atencion al Cliente</button>
                   </form>
               </div>
+              <!--FIN Reportes Financieros y Atencion al Cliente-->
             </div>
+            <!--FIN Seccion Mantenedor de Moviminetos y Reporteria-->
           </div>
+          <!--FIN Contenedor con Tabla de Movimientos Financieros, Ingreso de Moviminetos y Reporteria. Oculto por defecto-->
         </main>
 
         <footer class="footer">
             <div class="contenedor">
                 <p class="copy">Restaurant Siglo XII &copy; 2020</p>
+                <!--Informacion contacto del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Contactos</p>
                     <br>
@@ -144,6 +156,9 @@
                     <p>Atencion al cliente: +569 7856 0423</p>
                     <br>
                 </div>
+                <!--FIN Informacion contacto del local-->
+
+                <!--Horarios de Atencion del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Horarios de Atencion</p>
                     <br>
@@ -151,6 +166,9 @@
                     <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
                     <br>
                 </div>
+                <!--FIN Horarios de Atencion del local-->
+                
+                <!--Redes Sociales de local-->
                 <div class="redesociales">
                     <p class = "footer-title">Redes Sociales</p>
                     <br>
@@ -159,9 +177,11 @@
                     <img src="style/images/facebook.png">
                     <img src="style/images/twitter.png">
                 </div>
+                <!--FIN Redes Sociales de local-->
             </div>
         </footer>
 
+        <!--Carga de Scripts JS-->
         <script src="style/js/listamovimiento.js" onload="ListarMovimientos(), Mostrar()"></script>
         <script src="style/js/crearmovimiento.js"></script>
         <script src="style/js/reporte.js"></script>
@@ -169,6 +189,6 @@
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        
+        <!--FIN Carga de Scripts JS-->
     </body>
 </html>

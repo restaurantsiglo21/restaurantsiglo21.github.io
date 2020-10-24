@@ -1,18 +1,19 @@
+//Refresca la pagina
 function actualizar(){window.location.replace("http://127.0.0.1:8887/orden.html");}
 
+//Trae un listado de ordenes presentes en la API para su despliegue en una tabla en HTML
 function ListarOrdenes(){
     setInterval("actualizar()",30000);
 
+    //Trae Token de Autorizacion y ajusta parametros de peticion
     var token = localStorage.getItem("SavesToken", token) 
     var xhr = new XMLHttpRequest();
-        
-
     xhr.open("GET", "http://127.0.0.1:8000/api/orden/");
-
     xhr.setRequestHeader('Authorization', 'Token ' + token);
     xhr.responseType = 'json'
 
     xhr.onload = () => {
+        //Recoge la respuesta de la peticion
         var data = xhr.response;
         console.log(data);
 
@@ -38,6 +39,7 @@ function ListarOrdenes(){
             ordenes.push(objeto)
         }
 
+        //Ordena los elementos de un arreglo de menor a mayor
         function sortByProperty(property){  
             return function(a,b){  
             if(a[property] < b[property])  
@@ -52,6 +54,7 @@ function ListarOrdenes(){
         ordenes.sort(sortByProperty('numero')); 
         console.log(ordenes)
 
+        //Genera Tabla HTML y asigna cola en base a tiempo de preparacion
         for (var i = 0; i < ordenes.length; i++) {
             console.log(ordenes[i].minutos)
             if (ordenes[i].minutos < 60){
@@ -88,6 +91,7 @@ function ListarOrdenes(){
 
 }
 
+//Muestra el contenido del HTML en base al grupo del usuario
 function Mostrar(){
     var grupos = localStorage.getItem('Grupos')
     var formularios = document.getElementById('contenido')

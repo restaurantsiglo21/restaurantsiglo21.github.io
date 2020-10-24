@@ -1,39 +1,18 @@
+//Modifica el estado de la orden desde la vista de Cola de Ordenes
 function EditarOrden(){
+    //Trae Token de Autorización 
     var token = localStorage.getItem("SavesToken", token) 
-    
-    /*var ordenes = [125,26,35]
-
-    localStorage.setItem("Ordenes", JSON.stringify(ordenes));
-
-    var ordenes_pedidas = JSON.parse(localStorage.getItem("Ordenes"));
-
-    console.log(ordenes)
-    console.log(ordenes_pedidas)
-
-    for (var i = 0; i < ordenes_pedidas.length; i++) {
-        console.log(ordenes_pedidas[i])
-    }
-
-    ordenes_pedidas.push(4798)
-
-    localStorage.setItem("Ordenes", JSON.stringify(ordenes_pedidas));
-
-    var ordenes_pedidas = JSON.parse(localStorage.getItem("Ordenes"));
-
-    console.log(ordenes)
-    console.log(ordenes_pedidas)*/
-
     var n_orden = document.getElementById("n_orden").value
     var estado = document.getElementById("estado").value
     
+    //Ajusta Parametros de la peticion
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "http://127.0.0.1:8000/api/orden/"+n_orden+"/");
-
     xhr.responseType = 'json'
-    
     xhr.setRequestHeader('Authorization', 'Token ' + token);
 
     xhr.onload = () => {
+        //Recoje respuesta de la peticion
         var data = xhr.response;
         console.log(data);
 
@@ -52,6 +31,7 @@ function EditarOrden(){
         console.log(datos.recetas)
         console.log(data.recetas)
 
+        //Añade Tiempo de termino para una Orden Entregada
         if(estado == 'ENTREGADA'){
             var d = new Date();
             var fecha = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+'T'+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'.026068-03:00' 
@@ -59,13 +39,15 @@ function EditarOrden(){
             datos.append("hora_ter", fecha)
         }
 
+        //Trae Token de Autorización y Ajusta Parametros de la peticion
+        var token = localStorage.getItem("SavesToken", token) 
         var peticion = new XMLHttpRequest();
         peticion.open("PUT", "http://127.0.0.1:8000/api/orden/"+n_orden+"/editar_orden/");
-
         peticion.responseType = 'json'
         peticion.setRequestHeader('Authorization', 'Token ' + token);
 
         peticion.onload = () => {
+            //Recoje respuesta de la peticion
             var data2 = peticion.response;
             console.log(data2);
             ListarOrdenes();

@@ -21,15 +21,18 @@
                 <a href="index.html"><h1>Siglo XII Food</h1></a>
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
+                <!--Menu Superior-->
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
                     <a href="mesas.html">Mesas</a>
                     <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesión</a>
                 </nav>
+                <!--FIN Menu Superior-->
             </div>
         </header>
         
         <main class="main">
+        <!--Contenedor con Tabla de Notificaciones. Oculto por Defecto-->
         <div id="contenido" style="display: none;">
             <div class="contenedor_tabla">
                     <table id="tabla_notificacion" class="table table-bordered table-dark">
@@ -66,6 +69,7 @@
                 
             </div>
         </div>
+        <!--FIN Contenedor con Tabla de Notificaciones. Oculto por Defecto-->
         </main>
 
         <h4>Recuerda: Las notificaciones que se eliminen pasaran a estar atendidas &#128516</h4> 
@@ -73,6 +77,7 @@
         <footer class="footer" style="position: fixed;">
             <div class="contenedor">
                 <p class="copy">Restaurant Siglo XII &copy; 2020</p>
+                <!--Informacion contacto del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Contactos</p>
                     <br>
@@ -81,6 +86,9 @@
                     <p>Atencion al cliente: +569 7856 0423</p>
                     <br>
                 </div>
+                <!--FIN Informacion contacto del local-->
+
+                <!--Horarios de Atencion del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Horarios de Atencion</p>
                     <br>
@@ -88,6 +96,9 @@
                     <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
                     <br>
                 </div>
+                <!--FIN Horarios de Atencion del local-->
+                
+                <!--Redes Sociales de local-->
                 <div class="redesociales">
                     <p class = "footer-title">Redes Sociales</p>
                     <br>
@@ -96,11 +107,15 @@
                     <img src="style/images/facebook.png">
                     <img src="style/images/twitter.png">
                 </div>
+                <!--FIN Redes Sociales de local-->
             </div>
         </footer>
+
+        <!--Carga de Script JS-->
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
         <script src="style/js/listanotificacion.js" onload="ListarNotificacion(), Mostrar()"></script>
+        <!--FIN Carga de Script JS-->
     </body>
 </html>

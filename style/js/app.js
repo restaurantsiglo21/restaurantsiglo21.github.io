@@ -1,3 +1,4 @@
+//Instala Service Worker desde archivo service-worker.js
 ( function() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker

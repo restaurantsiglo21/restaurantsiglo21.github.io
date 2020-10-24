@@ -18,16 +18,21 @@
                 <a href="index.html"><h1>Siglo XII Food</h1></a>
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar"><b>&#9776;</b></label>
+                <!--Menu Superior-->
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
                     <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesion</a>
                 </nav>
+                <!--FIN Menu Superior-->
             </div>
         </header>
+
         <main class="main">
+        <!--Contenedor con Tabla de Productos en Bodega, Mantenedor de Productos y Recetas. Oculto por defecto-->
         <div id="contenido" style="display: none;">
           <h4 class="titulo">Bodega - Inventario Productos</h4>
           <div></div>
+          <!--Tabla de Productos-->
           <div id="scrollbar">
             <table class="table table-striped table-dark" id="tabla">
               <thead>
@@ -92,7 +97,9 @@
               </tbody>
             </table>  
           </div>
+          <!--FIN Tabla de Productos-->
 
+          <!--Formulario Mantenedor de Productos-->
           <div class="content" id="mantenedores">
             <div class="product bloques">
               <h1 class="subheader">Registrar producto</h1>
@@ -117,7 +124,9 @@
                   <button class="boton" type="button" onclick="CrearProducto()">Registrar nuevo +</button>
               </form>
             </div>
+            <!--FIN Formulario Mantenedor de Productos-->
 
+            <!--Formulario Ingreso de Recetas-->
             <div class="plato bloques">
               <form id="recetaform">
                   <h1 class="subheader">Registrar plato</h1>
@@ -166,13 +175,17 @@
               <input class="texto" type="text" name="productos" id="input_productos" placeholder="11,22,333..."/>
               <button class="boton" type="button" onclick="CrearReceta()">Registrar</button>
             </div>
+            <!--FIN Formulario Ingreso de Recetas-->
           </div>
-        </div>  
+        </div>
+        <!--Fin Contenedor con Tabla de Productos en Bodega, Mantenedor de Productos y Recetas. Oculto por defecto-->  
         </main>
+
         
         <footer class="footer">
             <div class="contenedor">
                 <p class="copy">Restaurant Siglo XII &copy; 2020</p>
+                <!--Informacion contacto del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Contactos</p>
                     <br>
@@ -181,6 +194,9 @@
                     <p>Atencion al cliente: +569 7856 0423</p>
                     <br>
                 </div>
+                <!--FIN Informacion contacto del local-->
+
+                <!--Horarios de Atencion del local-->
                 <div class="redesociales">
                     <p class = "footer-title">Horarios de Atencion</p>
                     <br>
@@ -188,6 +204,9 @@
                     <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
                     <br>
                 </div>
+                <!--FIN Horarios de Atencion del local-->
+
+                <!--Redes Sociales de local-->
                 <div class="redesociales">
                     <p class = "footer-title">Redes Sociales</p>
                     <br>
@@ -196,9 +215,11 @@
                     <img src="style/images/facebook.png">
                     <img src="style/images/twitter.png">
                 </div>
+                <!--FIN Redes Sociales de local-->
             </div>
         </footer>
 
+        <!--Carga de Scripts JS-->
         <script src="style/js/crearproducto.js"></script>
         <script src="style/js/listaproducto.js" onload="ListarProductos(), Mostrar()"></script>
         <script src="style/js/crearreceta.js"></script>
@@ -206,5 +227,6 @@
         <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--FIN Carga de Scripts JS-->
     </body>
 </html>
