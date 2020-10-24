@@ -1,0 +1,21 @@
+{
+    "name": "Siglo XXI Food",
+    "short_name": "Restaurant Siglo XXI",
+    "icons": [{
+      "src": "/style/images/favicon125x125.png",
+        "sizes": "125x125",
+        "type": "image/png"
+      },{
+        "src": "images/favicon152x152.png",
+          "sizes": "152x152",
+          "type": "image/png"
+      },{
+        "src": "images/favicon.png",
+          "sizes": "184x176",
+          "type": "image/png"
+      }],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#7b6842",
+    "theme_color": "#7b6842"
+  }
