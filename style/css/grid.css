@@ -20,6 +20,7 @@ h2,h4{
   background-color: #536d87;
   margin-bottom: 5px;
   margin-top: 5px;
+  line-height: 2em;
 }
 
 /* TODAS las Columnas */
@@ -88,6 +89,7 @@ h2,h4{
   width: 100%;
   text-align: center;
   margin-top: 5px;
+  line-height: 2em;
 }
 
 
@@ -138,16 +140,17 @@ h2,h4{
 
   .cuatro_columnas .columna
   {
-    width: 23.5%; /*23.5*/
-    margin-left: 10px;
+    width: 21.5%; /*23.5*/
+    margin-left: 2%;
     margin-right: 10px;
     border-radius: 10px;
   }
 }
 
+
+
 /* RESPONSIVE - RESPONSIVE - RESPONSIVE - RESPONSIVE - */
 /*Minimo 1024px*/
-
 @media (min-width: 1024px){
   .columna
   {
@@ -156,7 +159,7 @@ h2,h4{
   /*2 Columnas a partir de 1024px*/
   .dos_columnas .columna
   {
-    width: 50%; /*%*/
+    width: 50%; /*49%*/
   }
   .dos_columnas .columna:nth-child(2n)
   {
@@ -165,14 +168,21 @@ h2,h4{
   /*4 Columnas son dos en mayor a 1024px*/
   .cuatro_columnas .columna
   {
-    width: 23.5%; /*23.5*/
-    margin-left: 10px;
+    width: 21.5%; /*23.5*/
+    margin-left: 2.4%;
     margin-right: 10px;
   }
   /*6 Columnas son dos en mayor a 1024px*/
   .seis_columnas .columna
   {
     width: 16.6666%;
+  }
+  .paragraph {
+    min-height: 6em;
+  }
+
+    #odd {
+    padding-bottom: 4em;
   }
   .seis_columnas .columna:nth-child(2n)
   {
@@ -205,3 +215,4 @@ h2,h4{
     margin-right: 0;
   }
 }
+

@@ -1,5 +1,4 @@
-  
-var cacheName = "liftup-v1";
+var cacheName = "Siglo21_v1";
 var filesToCache = [
     "/",
     "/index.html",
@@ -48,8 +47,6 @@ var filesToCache = [
     "/style/js/crearreceta.js",
     "/style/js/editarmesa.js",
     "/style/js/editarorden.js",
-    "/style/js/list.js",
-    "/style/js/listacliente.js",
     "/style/js/listamovimiento.js",
     "/style/js/listanotificacion.js",
     "/style/js/listaorden.js",
