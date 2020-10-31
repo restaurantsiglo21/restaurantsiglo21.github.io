@@ -6,13 +6,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="icon" href="style/images/favicon.png">
         <link rel="stylesheet" href="style/css/main.css">
         <link rel="stylesheet" href="style/css/menu.css">
         <link rel="stylesheet" href="style/css/banner.css">
+        <link rel="stylesheet" href="style/css/grid.css">
+        <link rel="stylesheet" href="style/css/tabla.css">
         <link rel="stylesheet" href="style/css/login.css">
+        <link rel="stylesheet" href="style/css/bodega.css">
     </head>
-    <body class="main_login">
+    <body>
         <header>
             <div class="contenedor">
                 <a href="index.html"><h1>Siglo XXI Food</h1></a>
@@ -21,30 +25,56 @@
                 <!--Menu Superior-->
                 <nav class="menu">
                     <a href="index.html">Inicio</a>
-                    <a href="login.html">Ingresar</a>
+                    <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesión</a>
                 </nav>
                 <!--FIN Menu Superior-->
             </div>
         </header>
         
-        <main>
-            <!--Formulario de Inicio de Mesa-->
-            <section id="LoginFormulario">
-                    <h2 class="login_title">Inicio de Mesa</h2>
-                    <div class="login">
-                        <form id="loginform">
-                            <div class="form_group">
-                                <input type="number" id="id_mesa" name="mesa" required placeholder="Número de Mesa en la que inicia">
-                            </div>
-                            <span id="alerta" style="color: red;"></span>
-                            <button class="btnlogin" type="button" onclick="IniciarMesa()">Ingresar</button>  
-                        </form>
-                    </div>  
-            </section>
-            <!--FIN Formulario de Inicio de Mesa-->
+        <main class="main">
+        <!--Contenedor con Tabla de Notificaciones. Oculto por Defecto-->
+        <div id="contenido" style="display: none;">
+            <div class="contenedor_tabla" id="scrollbar">
+                    <table id="tabla_solicitud" class="table table-bordered table-dark">
+                        <caption id="table_title">Cola Rapida</caption>
+                        <tr>
+                            <th>N° Orden</th>
+                            <th>Estado</th> 
+                            <th>Hora Inicio</th>
+                            <th>Mesa</th>
+                            <th>Detalle</th>
+                        </tr>
+                        <tr>
+                            <td>Jill</td>
+                            <td>Smith</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Eve</td>
+                            <td>Jackson</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>80</td>
+                            <td>50</td>
+                            <td>50</td>
+                        </tr>
+                    </table>          
+                
+            </div>
+        </div>
+        <!--FIN Contenedor con Tabla de Notificaciones. Oculto por Defecto-->
         </main>
+
+        <h4>Recuerda: Las solicitudes que se eliminen pasaran a estar atendidas &#128516</h4> 
         
-        <footer class = "footer">
+        <footer class="footer" style="position: fixed;">
             <div class="contenedor">
                 <p class="copy">Restaurant Siglo XII &copy; 2020</p>
                 <!--Informacion contacto del local-->
@@ -67,7 +97,7 @@
                     <br>
                 </div>
                 <!--FIN Horarios de Atencion del local-->
-
+                
                 <!--Redes Sociales de local-->
                 <div class="redesociales">
                     <p class = "footer-title">Redes Sociales</p>
@@ -81,10 +111,11 @@
             </div>
         </footer>
 
-        <!--Carga de Scripts JS-->
-        <script src="style/js/crearpedido.js"></script>
+        <!--Carga de Script JS-->
+        <script src="style/js/app.js"></script>
         <script src="style/js/push.min.js"></script>
-        <script src="style/js/panel.js"></script>
-        <!--FIN Carga de Scripts JS-->
+        <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
+        <script src="style/js/listasolicitud.js" onload="ListarNotificacion(), Mostrar()"></script>
+        <!--FIN Carga de Script JS-->
     </body>
 </html>

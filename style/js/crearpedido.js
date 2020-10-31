@@ -173,12 +173,19 @@ function IniciarMesa(){
 
     var num_mesa = '' 
     localStorage.removeItem('Sesion_Mesa')
+    localStorage.removeItem('Recetas')
+    localStorage.removeItem('Detalle')
+    
     var num_mesa = '' 
     num_mesa = document.getElementById('id_mesa').value
 
-    localStorage.setItem('Sesion_Mesa', num_mesa)
-    window.location.replace('http://127.0.0.1:8887/menu.html')
 
+    if(num_mesa == "" || num_mesa == undefined || num_mesa>=13 || num_mesa<=0){
+        document.getElementById('alerta').innerHTML = "Complete el campo o Ingrese un numero de mesa valido (1-12) para continuar"
+    }else{
+        localStorage.setItem('Sesion_Mesa', num_mesa)
+        window.location.replace('http://127.0.0.1:8887/menu.html')
+    }
 }
 
 //Vuelve al menu de platos

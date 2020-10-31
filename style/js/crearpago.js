@@ -189,7 +189,7 @@ function Pagar(){
         }
         if(xhr.status == 201 || xhr.status == 200 ){
             //Notifica al usuario el pago exitoso
-            Push.create("Su pago fue Recibido, Gracias vuelvas prontos",{
+            Push.create("Su pago fue Recibido, Gracias vuelva pronto",{
                 body: "Gracias por preferirnos",
                 icon: "style/images/favicon.png",
                 timeout: 8000,
@@ -206,6 +206,7 @@ function Pagar(){
                 PagarOrdenes(ordenes[i], data.numero, data.metodo)
             }
 
+            
             setTimeout("RedireccionFinal()", 1000)
         }
     }
@@ -336,6 +337,22 @@ function CompletarFecha(numero){
 
 //Limpia las ordenes en curso y reestablece la aplicacion para volver a pedir platos y recetas desde el menu
 function RedireccionFinal(){
+    GenerarBoleta();
     localStorage.removeItem('Ordenes_en_curso')
     window.location.replace("http://127.0.0.1:8887/menu.html");
+}
+
+function GenerarBoleta(){
+
+    var main = document.getElementById('main')
+    var boton_menu = document.getElementById('boton_menu')
+    var confirmacion = document.getElementById('confirmacion')
+    var volver = document.getElementById('volver')
+    
+    main.style.maxWidth = "100%"
+    main.style.marginLeft = "0px"
+    boton_menu.style.display = "none"
+    confirmacion.style.display = "none"
+    volver.style.display = "none"
+    window.print()
 }

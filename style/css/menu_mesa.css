@@ -148,6 +148,10 @@ hr {
     border: 1px solid rgb(185, 185, 185);
 }
 
+.unitario{
+    transform: translateY(-26px);
+}
+
 @media screen and  (max-width: 1500px) {
     
     .confirmacion h1 {

@@ -51,7 +51,7 @@ formulario.addEventListener('submit', function(e){
                 
                 //Redirecciona a una vista según el grupo del usuario
                 if(grupos.includes(3) ){
-                    window.location.replace("http://127.0.0.1:8887/index.html")
+                    window.location.replace("http://127.0.0.1:8887/solicitud.html")
                 }
                 if(grupos.includes(1) ){
                     window.location.replace("http://127.0.0.1:8887/orden.html")
