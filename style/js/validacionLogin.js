@@ -3,29 +3,30 @@ const inputs = document.querySelectorAll("form input");
 const alerta = document.getElementById("alerta");
 
 const expresiones = {
+    nombre: /^[A-Za-z][A-Za-z0-9]*$/,
     numero: /^\d/,
   };
   
   const validarFormulario = (e) => {
     switch (e.target.id) {
         //Validacion producto
-      case "n_orden":
-        if (expresiones.numero.test(e.target.value)) {
+      case "id_usuario":
+        if (expresiones.nombre.test(e.target.value)) {
           document
-            .getElementById("ordenIn")
+            .getElementById("userIn")
             .classList.remove("formError");
-          document
-            .getElementById("ordenIn")
-            .classList.add("formCorrect");
+        //   document
+        //     .getElementById("userIn")
+        //     .classList.add("formCorrect");
           alerta.innerHTML = ``;
         } else {
           document
-            .getElementById("ordenIn")
+            .getElementById("userIn")
             .classList.add("formError");
           document
-            .getElementById("ordenIn")
+            .getElementById("userIn")
             .classList.remove("formCorrect");
-          alerta.innerHTML = `Este campo solo acepta numeros`;
+          alerta.innerHTML = `Por favor ingresar un usuario valido`;
         }
         break;
 
@@ -35,3 +36,4 @@ inputs.forEach((input) => {
     input.addEventListener("keyup", validarFormulario);
 input.addEventListener("blur", validarFormulario);
 });
+

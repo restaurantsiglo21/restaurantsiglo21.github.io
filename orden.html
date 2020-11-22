@@ -106,8 +106,11 @@
 
             <!--Formulario de cambio de Estado de Orden-->
             <form class="form_orden">
+                <span id="alerta"></span>
+                <div id="ordenIn">
                     <label for="n_orden" class="label_orden">Actualizar Orden:</label>
                     <input type="text" class="form-control" id="n_orden" name="n_orden" required placeholder="Numenro de Orden">
+                </div>
                     <label for="n_orden" class="label_orden">Estado:</label>
                     <select name="estado" class="form-control" id="estado" required>
                         <option value="PREPARACION">PREPARACION</option>
@@ -164,6 +167,7 @@
         <script src="style/js/listaorden.js" onload="ListarOrdenes(), Mostrar()"></script>
         <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
         <script src="style/js/editarorden.js"></script>
+        <script src="style/js/validacionOrden.js"></script>
         <!--FIN Carga de Script JS-->
     </body>
 </html>

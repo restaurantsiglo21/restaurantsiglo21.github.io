@@ -50,10 +50,25 @@ function CrearReceta(){
         console.log(data);
 
         if(xhr.status >= 400){
-            document.getElementById("alerta_2").innerHTML = "Complete todos los campos!!!"
+            Push.create("La receta no pudo ser creada",{
+                body: "Revise sus campos o ingrese ingredientes validos que esten registrado",
+                icon: "style/images/favicon.png",
+                timeout: 8000,
+                onClick: function(){                  
+                    this.close();
+                }
+            });
         }
         if(xhr.status == 201 || xhr.status == 200 ){
             ListarProductos();
+            Push.create("La receta se creó exitosamente",{
+                body: "Su receta ya está en el sistema y se añadió al menú para clientes",
+                icon: "style/images/favicon.png",
+                timeout: 8000,
+                onClick: function(){                  
+                    this.close();
+                }
+            });
         }
     }
 

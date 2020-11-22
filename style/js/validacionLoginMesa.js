@@ -9,23 +9,23 @@ const expresiones = {
   const validarFormulario = (e) => {
     switch (e.target.id) {
         //Validacion producto
-      case "n_orden":
+      case "id_mesa":
         if (expresiones.numero.test(e.target.value)) {
           document
-            .getElementById("ordenIn")
+            .getElementById("numMesaIn")
             .classList.remove("formError");
-          document
-            .getElementById("ordenIn")
-            .classList.add("formCorrect");
+        //   document
+        //     .getElementById("numMesaIn")
+        //     .classList.add("formCorrect");
           alerta.innerHTML = ``;
         } else {
           document
-            .getElementById("ordenIn")
+            .getElementById("numMesaIn")
             .classList.add("formError");
           document
-            .getElementById("ordenIn")
+            .getElementById("numMesaIn")
             .classList.remove("formCorrect");
-          alerta.innerHTML = `Este campo solo acepta numeros`;
+          alerta.innerHTML = `Por favor ingresar un numero de mesa valido`;
         }
         break;
 

@@ -19,11 +19,26 @@ function CrearProducto(){
 
         //Valida el envio de todos los datos solicitados
         if(xhr.status >= 400){
-            document.getElementById("alerta").innerHTML = "Complete todos los campos!!!"
+            
+            Push.create("El producto no pudo ser creado",{
+                body: "Revise sus campos o ingrese un movimiento válido que este registrado",
+                icon: "style/images/favicon.png",
+                timeout: 8000,
+                onClick: function(){                  
+                    this.close();
+                }
+            });    
         }
         if(xhr.status == 201 || xhr.status == 200 ){
-            document.getElementById("alerta").innerHTML = ""
             ListarProductos();
+            Push.create("El producto se creó exitosamente",{
+                body: "Su producto ya está en el sistema y se añadió al inventario",
+                icon: "style/images/favicon.png",
+                timeout: 8000,
+                onClick: function(){                  
+                    this.close();
+                }
+            });
         }
     }
 

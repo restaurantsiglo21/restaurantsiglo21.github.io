@@ -28,7 +28,10 @@ function CrearMovimiento(){
     
     //Valida que un ingreso no contenga egreso, y viseversa
     if(ingreso != 0 && egreso != 0){
-        document.getElementById("alerta_2").innerHTML = "No puede ingresar y egresar la vez!"
+        document.getElementById("alerta").innerHTML = "No puede ingresar y egresar la vez!"
+    }
+    if(ingreso == 0 && egreso == 0){
+        document.getElementById("alerta").innerHTML = "Complete un campo ya sea: Ingreso o Egreso"
     }
     if((ingreso != 0 && egreso == 0)||(ingreso == 0 && egreso != 0)){
         xhr.send(datos);

@@ -113,17 +113,23 @@
                 <form id="movimiento_form">
                     <span id="alerta"></span>
                     <span id="alerta_2"></span>
-                    <label class="labels">Detalle:</label>
-                    <input class="texto" type="text" name="detalle" id="detalle_movimiento" required placeholder="Ingresa el Detalle o Razon del movimiento"/>
+                    <div id="container-detaller">
+                      <label class="labels">Detalle:</label>
+                      <input class="texto" type="text" name="detalle" id="detalle_movimiento" required placeholder="Ingresa el Detalle o Razon del movimiento"/>
+                    </div>
                     <label class="labels" id="label_metodo">Metodo Pago:</label>
                     <select class="texto" name="metodo" id="metodo_movimiento">
                         <option value="EFECTIVO">Efectivo</option>
                         <option value="CREDITO/DEBITO">Tarjeta Credito/Debito</option>
                     </select>
-                    <label class="labels">Ingreso:</label>
-                    <input class="texto" type="number" name="ingreso" id="ingreso_movimiento" required placeholder="Pesos ($)"/>
-                    <label class="labels">Egreso:</label>
-                    <input class="texto" type="number" name="egreso" id="egreso_movimiento" required placeholder="Pesos ($)"/>
+                    <div id="container-inmovimiento">
+                      <label class="labels">Ingreso:</label>
+                      <input class="texto" type="number" name="ingreso" id="ingreso_movimiento" required placeholder="Pesos ($)"/>
+                    </div>
+                    <div id="container-egmovimiento">
+                      <label class="labels">Egreso:</label>
+                      <input class="texto" type="number" name="egreso" id="egreso_movimiento" required placeholder="Pesos ($)"/>
+                    </div>
                     <button class="boton" type="button" onclick="CrearMovimiento()">Registrar nuevo +</button>
                 </form>
               </div>
@@ -182,6 +188,7 @@
         </footer>
 
         <!--Carga de Scripts JS-->
+        <script src="style/js/validacionFinanzas.js"></script>
         <script src="style/js/listamovimiento.js" onload="ListarMovimientos(), Mostrar()"></script>
         <script src="style/js/crearmovimiento.js"></script>
         <script src="style/js/reporte.js"></script>

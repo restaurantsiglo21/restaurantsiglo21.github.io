@@ -30,11 +30,12 @@
         <main>
             <!--Formulario de Inicio de Mesa-->
             <section id="LoginFormulario">
+                <span id="alerta"></span>
                     <h2 class="login_title">Inicio de Mesa</h2>
                     <div class="login">
                         <form id="loginform">
-                            <div class="form_group">
-                                <input type="number" id="id_mesa" name="mesa" required placeholder="Número de Mesa en la que inicia">
+                            <div class="form_group" id="numMesaIn">
+                                <input type="number" id="id_mesa" name="username" required id="id_email" placeholder="Número de Mesa en la que inicia">
                             </div>
                             <span id="alerta" style="color: red;"></span>
                             <button class="btnlogin" type="button" onclick="IniciarMesa()">Ingresar</button>  
@@ -82,7 +83,11 @@
         </footer>
 
         <!--Carga de Scripts JS-->
+        <script src="./style/js/validacionLoginMesa.js"></script>
         <script src="style/js/crearpedido.js"></script>
+        <script src="style/js/login2.js"></script>
+        <script src="style/js/logout2.js"></script>
+        <script src="style/js/listacliente.js"></script>
         <script src="style/js/push.min.js"></script>
         <script src="style/js/panel.js"></script>
         <!--FIN Carga de Scripts JS-->

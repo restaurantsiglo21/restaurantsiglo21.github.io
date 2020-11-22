@@ -1,233 +1,333 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Restaurant Siglo XXI</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link rel="icon" href="style/images/favicon.png">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="style/css/main.css">
-        <link rel="stylesheet" href="style/css/menu.css">
-        <link rel="stylesheet" href="style/css/bodega.css">
-      </head>
-    <body>
-        <header>
-            <div class="contenedor">
-                <a href="index.html"><h1>Siglo XXI Food</h1></a>
-                <input type="checkbox" id="menu-bar">
-                <label for="menu-bar"><b>&#9776;</b></label>
-                <!--Menu Superior-->
-                <nav class="menu">
-                    <a href="index.html">Inicio</a>
-                    <a href="bodega_solicitud.html">Solicitudes</a>
-                    <a onclick="Logout2()" id="logout" style="display: none;">Cierra tu Sesion</a>
-                </nav>
-                <!--FIN Menu Superior-->
-            </div>
-        </header>
+  <head>
+    <title>Restaurant Siglo XXI</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="style/images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/css/main.css" />
+    <link rel="stylesheet" href="style/css/menu.css" />
+    <link rel="stylesheet" href="style/css/bodega.css" />
+  </head>
+  <body>
+    <header>
+      <div class="contenedor">
+        <a href="index.html"><h1>Siglo XXI Food</h1></a>
+        <input type="checkbox" id="menu-bar" />
+        <label for="menu-bar"><b>&#9776;</b></label>
+        <!--Menu Superior-->
+        <nav class="menu">
+          <a href="index.html">Inicio</a>
+          <a onclick="Logout2()" id="logout" style="display: none"
+            >Cierra tu Sesion</a
+          >
+        </nav>
+        <!--FIN Menu Superior-->
+      </div>
+    </header>
 
-        <main class="main">
-        <!--Contenedor con Tabla de Productos en Bodega, Mantenedor de Productos y Recetas. Oculto por defecto-->
-        <div id="contenido" style="display: none;">
-          <h4 class="titulo">Bodega - Inventario Productos</h4>
-          <div></div>
-          <!--Tabla de Productos-->
-          <div id="scrollbar">
-            <table class="table table-striped table-dark" id="tabla">
-              <thead>
-                <tr>
-                  <th>N° Orden</th>
-                  <th>Estado</th> 
-                  <th>Hora Inicio</th>
-                  <th>Mesa</th>
-                  <th>Detalle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>80</td>
-                    <td>50</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>80</td>
-                    <td>50</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                  <td>John</td>
-                  <td>Doe</td>
-                  <td>80</td>
-                  <td>50</td>
-                  <td>50</td>
-                </tr>
-                <tr>
-                  <td>John</td>
-                  <td>Doe</td>
-                  <td>80</td>
-                  <td>50</td>
-                  <td>50</td>
-                </tr>
-                <tr>
-                  <td>John</td>
-                  <td>Doe</td>
-                  <td>80</td>
-                  <td>50</td>
-                  <td>50</td>
-                </tr>
-              </tbody>
-            </table>  
-          </div>
-          <!--FIN Tabla de Productos-->
-
-          <!--Formulario Mantenedor de Productos-->
-          <div class="content" id="mantenedores">
-            <div class="product bloques">
-              <h1 class="subheader">Registrar producto</h1>
-              <form id="productoform">
-                  <span id="alerta"></span>
-                  <label class="labels">Nombre:</label>
-                  <input class="texto" type="text" name="nombre" id="nombre_producto" required placeholder="Ingresa el nombre de producto"/>
-                  <label class="labels">Costo:</label>
-                  <input class="texto" type="number" name="costo" id="costo_producto" required placeholder="Costo unitario del producto"/>
-                  <label class="labels">Stock:</label>
-                  <input class="texto" type="number" name="stock" id="stock_producto" required placeholder="Cantidad de productos"/>
-                  <label class="labels">Embalaje:</label>
-                  <select class="combo" name="embalaje" id="embalaje_producto" required>
-                      <option value="ENVASADO">ENVASADO</option>
-                      <option value="GRANEL">GRANEL</option>
-                  </select>
-                  <label class="labels">Movimiento:</label>
-                  <input class="texto" type="number" name="movimiento" id="movimiento_producto" required placeholder="N° Movimiento de compra del producto"/>
-                  <label class="labels">Detalle:</label>
-                  <textarea class="text-area" name="detalle" id="detalle_producto" maxlength="300" required placeholder="Detalle del producto"></textarea>
-                  <button class="boton" type="button" onclick="ModificarStock()">Modificar stock</button>
-                  <button class="boton" type="button" onclick="CrearProducto()">Registrar nuevo +</button>
-              </form>
-            </div>
-            <!--FIN Formulario Mantenedor de Productos-->
-
-            <!--Formulario Ingreso de Recetas-->
-            <div class="plato bloques">
-              <form id="recetaform">
-                  <h1 class="subheader">Registrar plato</h1>
-                  <span id="alerta_2"></span>
-                  <label class="labels">Nombre:</label>
-                  <input class="texto" type="text" name="nombre" id="nombre_receta" placeholder="Ingresa el nombre de producto"/>
-                  <label class="labels">Tiempo preparacion:</label>
-                  <input class="texto" type="number" name="t_preparacion" id="preparacion_receta" placeholder="Minutos"/>
-                  <label class="labels">Grupo:</label>
-                  <select class="combo" name="grupo" id="grupo_receta">
-                      <option value="ENTRADA">ENTRADA</option>
-                      <option value="PLATO_FONDO">PLATO DE FONDO</option>
-                      <option value="APERITIVO">APERITIVO</option>
-                      <option value="AGREGADO">AGREGADO</option>
-                      <option value="BEBESTIBLE">BEBESTIBLE</option>
-                      <option value="POSTRE">POSTRE</option>
-                  </select>
-                  <label class="labels">Sub Grupo:</label>
-                  <select class="combo" name="sub_grupo" id="subgrupo_receta">
-                      <option value="SOPAS">SOPAS</option>
-                      <option value="CREMAS">CREMAS</option>
-                      <option value="CARNES_ROJAS">CARNES ROJAS</option>
-                      <option value="CARNES_BLANCAS">CARNES BLANCAS</option>
-                      <option value="PESCADOS">PESCADOS</option>
-                      <option value="MARISCOS">MARISCOS</option>
-                      <option value="CALDOS">CALDOS</option>
-                      <option value="LEGUMBRES">LEGUMBRES</option>
-                      <option value="PASTELES">PASTELES</option>
-                      <option value="EMBUTIDOS">EMBUTIDOS</option>
-                      <option value="EMPANADAS">EMPANADAS</option>
-                      <option value="ENSALADAS">ENSALADAS</option>
-                      <option value="VINOS">VINOS</option>
-                      <option value="BEBIDAS">BEBIDAS</option>
-                      <option value="JUGOS">JUGOS</option>
-                      <option value="BAJATIVO">BAJATIVO</option>
-                      <option value="HELADOS">HELADOS</option>
-                      <option value="TORTAS">TORTAS</option>
-                      <option value="KUCHENS">KUCHENS</option>
-                      <option value="OTRO">OTRO</option>
-                  </select>
-                  <label class="labels">Precio venta</label>
-                  <input class="texto" type="number" name="precio" id="precio_receta" placeholder="Pesos ($)"/>
-              </form>
-
-              <label class="labels">Productos:</label>
-              <input class="texto" type="text" name="productos" id="input_productos" placeholder="11,22,333..."/>
-              <button class="boton" type="button" onclick="CrearReceta()">Registrar</button>
-            </div>
-            <!--FIN Formulario Ingreso de Recetas-->
-          </div>
+    <main class="main">
+      <!--Contenedor con Tabla de Productos en Bodega, Mantenedor de Productos y Recetas. Oculto por defecto-->
+      <div id="contenido">
+        <h4 class="titulo">Bodega - Inventario Productos</h4>
+        <div></div>
+        <!--Tabla de Productos-->
+        <div id="scrollbar">
+          <table class="table table-striped table-dark" id="tabla">
+            <thead>
+              <tr>
+                <th>N° Orden</th>
+                <th>Estado</th>
+                <th>Hora Inicio</th>
+                <th>Mesa</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+                <td>50</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+                <td>50</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+                <td>50</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+                <td>50</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+                <td>50</td>
+                <td>50</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <!--Fin Contenedor con Tabla de Productos en Bodega, Mantenedor de Productos y Recetas. Oculto por defecto-->  
-        </main>
+        <!--FIN Tabla de Productos-->
 
-        
-        <footer class="footer">
-            <div class="contenedor">
-                <p class="copy">Restaurant Siglo XII &copy; 2020</p>
-                <!--Informacion contacto del local-->
-                <div class="redesociales">
-                    <p class = "footer-title">Contactos</p>
-                    <br>
-                    <p>Telefono y Reservas: +569 6745 8243</p>
-                    <p>Email: siglo21food@gmail.com</p>
-                    <p>Atencion al cliente: +569 7856 0423</p>
-                    <br>
-                </div>
-                <!--FIN Informacion contacto del local-->
+        <!--Formulario Mantenedor de Productos-->
+        <div class="content" id="mantenedores">
+          <div class="product bloques">
+            <h1 class="subheader">Registrar producto</h1>
+            <form id="productoform" class="valform">
+              <span id="alerta"></span>
+              <label class="labels">Nombre:</label>
+              <div id="nombre_producto_container">
+                <input
+                  class="texto"
+                  type="text"
+                  name="nombre"
+                  id="nombre_producto"
+                  required
+                  placeholder="Ingresa el nombre de producto"
+                />
+              </div>
+              <label class="labels">Costo:</label>
+              <div id="costo_producto_container">
+                <input
+                  class="texto"
+                  type="number"
+                  name="costo"
+                  id="costo_producto"
+                  required
+                  placeholder="Costo unitario del producto"
+                />
+              </div>
+              <label class="labels">Stock:</label>
+              <div id="stock_producto_container">
+                <input
+                  class="texto"
+                  type="number"
+                  name="stock"
+                  id="stock_producto"
+                  required
+                  placeholder="Cantidad de productos"
+                />
+              </div>
+              <label class="labels">Embalaje:</label>
+              <select
+                class="combo"
+                name="embalaje"
+                id="embalaje_producto"
+                required
+              >
+                <option value="ENVASADO">ENVASADO</option>
+                <option value="GRANEL">GRANEL</option>
+              </select>
+              <label class="labels">Movimiento:</label>
+              <div id="movimiento_producto_container">
+                <input
+                  class="texto"
+                  type="number"
+                  name="movimiento"
+                  id="movimiento_producto"
+                  required
+                  placeholder="N° Movimiento de compra del producto"
+                />
+              </div>
+              <label class="labels">Detalle:</label>
+              <textarea
+                class="text-area"
+                name="detalle"
+                id="detalle_producto"
+                maxlength="300"
+                required
+                placeholder="Detalle del producto"
+              ></textarea>
+              <button class="boton" type="button" onclick="ModificarStock()">
+                Modificar stock
+              </button>
+              <button class="boton" type="button" onclick="CrearProducto()">
+                Registrar nuevo +
+              </button>
+            </form>
+          </div>
+          <!--FIN Formulario Mantenedor de Productos-->
 
-                <!--Horarios de Atencion del local-->
-                <div class="redesociales">
-                    <p class = "footer-title">Horarios de Atencion</p>
-                    <br>
-                    <p>Lunes a Viernes: 10:00 am - 9:00 pm</p>
-                    <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
-                    <br>
-                </div>
-                <!--FIN Horarios de Atencion del local-->
+          <!--Formulario Ingreso de Recetas-->
+          <div class="plato bloques">
+            <form id="recetaform" class="valform">
+              <h1 class="subheader">Registrar plato</h1>
+              <span id="alerta2"></span>
+              <label class="labels">Nombre:</label>
+              <div id="nombre_receta_container">
+                <input
+                  class="texto"
+                  type="text"
+                  name="nombre"
+                  id="nombre_receta"
+                  placeholder="Ingresa el nombre de producto"
+                />
+              </div>
+              <label class="labels">Tiempo preparacion:</label>
+              <div id="tiempo_receta_container">
+                <input
+                  class="texto"
+                  type="number"
+                  name="t_preparacion"
+                  id="preparacion_receta"
+                  placeholder="Minutos"
+                />
+              </div>
+              <label class="labels">Grupo:</label>
+              <select class="combo" name="grupo" id="grupo_receta">
+                <option value="ENTRADA">ENTRADA</option>
+                <option value="PLATO_FONDO">PLATO DE FONDO</option>
+                <option value="APERITIVO">APERITIVO</option>
+                <option value="AGREGADO">AGREGADO</option>
+                <option value="BEBESTIBLE">BEBESTIBLE</option>
+                <option value="POSTRE">POSTRE</option>
+              </select>
+              <label class="labels">Sub Grupo:</label>
+              <select class="combo" name="sub_grupo" id="subgrupo_receta">
+                <option value="SOPAS">SOPAS</option>
+                <option value="CREMAS">CREMAS</option>
+                <option value="CARNES_ROJAS">CARNES ROJAS</option>
+                <option value="CARNES_BLANCAS">CARNES BLANCAS</option>
+                <option value="PESCADOS">PESCADOS</option>
+                <option value="MARISCOS">MARISCOS</option>
+                <option value="CALDOS">CALDOS</option>
+                <option value="LEGUMBRES">LEGUMBRES</option>
+                <option value="PASTELES">PASTELES</option>
+                <option value="EMBUTIDOS">EMBUTIDOS</option>
+                <option value="EMPANADAS">EMPANADAS</option>
+                <option value="ENSALADAS">ENSALADAS</option>
+                <option value="VINOS">VINOS</option>
+                <option value="BEBIDAS">BEBIDAS</option>
+                <option value="JUGOS">JUGOS</option>
+                <option value="BAJATIVO">BAJATIVO</option>
+                <option value="HELADOS">HELADOS</option>
+                <option value="TORTAS">TORTAS</option>
+                <option value="KUCHENS">KUCHENS</option>
+                <option value="OTRO">OTRO</option>
+              </select>
+              <label class="labels">Precio venta</label>
+              <div id="precio_receta_container">
+                <input
+                  class="texto"
+                  type="number"
+                  name="precio"
+                  id="precio_receta"
+                  placeholder="Pesos ($)"
+                />
+              </div>
+            </form>
 
-                <!--Redes Sociales de local-->
-                <div class="redesociales">
-                    <p class = "footer-title">Redes Sociales</p>
-                    <br>
-                    <p>Facebook: Siglo21rest</p>
-                    <p>Instragram: restaurant_siglo21</p>
-                    <img src="style/images/facebook.png">
-                    <img src="style/images/twitter.png">
-                </div>
-                <!--FIN Redes Sociales de local-->
-            </div>
-        </footer>
+            <label class="labels">Productos:</label>
+            <input
+              class="texto"
+              type="text"
+              name="productos"
+              id="input_productos"
+              placeholder="11,22,333..."
+            />
+            <button class="boton" type="button" onclick="CrearReceta()">
+              Registrar
+            </button>
+          </div>
+          <!--FIN Formulario Ingreso de Recetas-->
+        </div>
+      </div>
+      <!--Fin Contenedor con Tabla de Productos en Bodega, Mantenedor de Productos y Recetas. Oculto por defecto-->
+    </main>
 
-        <!--Carga de Scripts JS-->
-        <script src="style/js/crearproducto.js"></script>
-        <script src="style/js/listaproducto.js" onload="ListarProductos(), Mostrar()"></script>
-        <script src="style/js/crearreceta.js"></script>
-        <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
-        <script src="style/js/app.js"></script>
-        <script src="style/js/push.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <!--FIN Carga de Scripts JS-->
-    </body>
+    <footer class="footer">
+      <div class="contenedor">
+        <p class="copy">Restaurant Siglo XII &copy; 2020</p>
+        <!--Informacion contacto del local-->
+        <div class="redesociales">
+          <p class="footer-title">Contactos</p>
+          <br />
+          <p>Telefono y Reservas: +569 6745 8243</p>
+          <p>Email: siglo21food@gmail.com</p>
+          <p>Atencion al cliente: +569 7856 0423</p>
+          <br />
+        </div>
+        <!--FIN Informacion contacto del local-->
+
+        <!--Horarios de Atencion del local-->
+        <div class="redesociales">
+          <p class="footer-title">Horarios de Atencion</p>
+          <br />
+          <p>Lunes a Viernes: 10:00 am - 9:00 pm</p>
+          <p>Sabados y Domingos: 12:00 pm - 11:00 pm</p>
+          <br />
+        </div>
+        <!--FIN Horarios de Atencion del local-->
+
+        <!--Redes Sociales de local-->
+        <div class="redesociales">
+          <p class="footer-title">Redes Sociales</p>
+          <br />
+          <p>Facebook: Siglo21rest</p>
+          <p>Instragram: restaurant_siglo21</p>
+          <img src="style/images/facebook.png" />
+          <img src="style/images/twitter.png" />
+        </div>
+        <!--FIN Redes Sociales de local-->
+      </div>
+    </footer>
+
+    <!--Carga de Scripts JS-->
+    <script src="./style/js/validacionBodega.js"></script>
+    <script src="style/js/crearproducto.js"></script>
+    <script
+      src="style/js/listaproducto.js"
+      onload="ListarProductos(), Mostrar()"
+    ></script>
+    <script src="style/js/crearreceta.js"></script>
+    <script src="style/js/logout2.js" onload="MostrarLogout()"></script>
+    <script src="style/js/app.js"></script>
+    <script src="style/js/push.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <!--FIN Carga de Scripts JS-->
+  </body>
 </html>

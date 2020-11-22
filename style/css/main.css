@@ -120,6 +120,24 @@ footer .contenedor
     margin-top: 10px;
 }
 
+#alerta {
+    color: rgb(243, 62, 62);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#alerta2 {
+    color: rgb(243, 62, 62);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.formCorrect input{
+    border: 2px green solid;
+}
+
+.formError input{
+    border: 2px red solid;
+}
+
 /* RESPONSIVE - RESPONSIVE - RESPONSIVE - RESPONSIVE - */
 /*Minimo 720px*/
 @media (min-width:720px){

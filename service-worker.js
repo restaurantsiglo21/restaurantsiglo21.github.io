@@ -4,8 +4,6 @@ var filesToCache = [
     "/index.html",
     "/login.html",
     "/bodega.html",
-    "/bodega_solicitud.html",
-    "/solicitud.html",
     "/confirmacion.html",
     "/finanzas.html",
     "/login_mesa.html",
@@ -63,8 +61,6 @@ var filesToCache = [
     "/style/js/reporte.js",
     "/style/js/validar.js",
     "/style/js/validar_client.js",
-    "/style/js/listasolicitud.js",
-    "/style/js/listasolicitud_bodega.js",
 ];
 
 self.addEventListener( 'install', function( e ) {

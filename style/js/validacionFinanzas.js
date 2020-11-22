@@ -1,46 +1,85 @@
-const movimiento_form = document.getElementById('movimiento_form')
-const inputs = document.querySelectorAll('#movimiento_form input')
-const alerta = document.getElementById('alerta')
+const bodegaform = document.getElementsByClassName("form");
+const inputs = document.querySelectorAll("form input");
+const alerta = document.getElementById("alerta");
+const alerta2 = document.getElementById("alerta2");
 
 const expresiones = {
-    nombre: /^[a-zA-Z0-9\_\-\s\.]{0,25}$/,
-	numero: /^\d/, 
-}
+  nombre: /^[a-zA-Z0-9\_\-\s\.]{1,25}$/,
+  numero: /^\d/,
+};
 
 const validarFormulario = (e) => {
-	switch (e.target.name) {
-		case "detalle":
-			validarCampoFinanzas(expresiones.nombre, e.target, e.target.name)
-		break;
-		case "ingreso":
-			validarCampoFinanzas(expresiones.numero, e.target, e.target.name)
-		break;
-		case "egreso":
-			validarCampoFinanzas(expresiones.numero, e.target, e.target.name)
-		break;
-	}
-}
-
-//Funcion validar producto
-const validarCampoFinanzas = (expresion, input, campo) => {
-	if (expresion.test(input.value)) {
-		document.getElementById(`${campo}_movimiento`).classList.remove('formError')
-		document.getElementById(`${campo}_movimiento`).classList.add('formCorrect')
-		alerta.innerHTML = ``
-	} else {
-		document.getElementById(`${campo}_movimiento`).classList.add('formError')
-		document.getElementById(`${campo}_movimiento`).classList.add('formCorrect')
-		alerta.innerHTML = `Debe ingresar un ${campo} válido`
-	}
-}
+  switch (e.target.id) {
+	  //Validacion detalle
+    case "detalle_movimiento":
+      if (expresiones.nombre.test(e.target.value)) {
+        document
+          .getElementById("container-detaller")
+          .classList.remove("formError");
+        document
+          .getElementById("container-detaller")
+          .classList.add("formCorrect");
+        alerta.innerHTML = ``;
+      } else {
+        document
+          .getElementById("container-detaller")
+          .classList.add("formError");
+        document
+          .getElementById("container-detaller")
+          .classList.remove("formCorrect");
+        alerta.innerHTML = `Debe ingresar un detalle válido`;
+      }
+	  break;
+	  //Fin validacion detalle
+	  //-----------------------------------------º-----------------------------------------
+	  //Validacion engreso movimiento
+	  case "egreso_movimiento": 
+		if (expresiones.numero.test(e.target.value)) {
+			document
+			  .getElementById("container-egmovimiento")
+			  .classList.remove("formError");
+			document
+			  .getElementById("container-egmovimiento")
+			  .classList.add("formCorrect");
+			alerta.innerHTML = ``;
+		  } else {
+			document
+			  .getElementById("container-egmovimiento")
+			  .classList.add("formError");
+			document
+			  .getElementById("container-egmovimiento")
+			  .classList.remove("formCorrect");
+			alerta.innerHTML = `Debe ingresar un egreso valido`;
+		  }
+	  break;
+	  //Fin validacion costo
+	  //-----------------------------------------º-----------------------------------------
+	  //Validacion stock
+	  case "ingreso_movimiento": 
+		if (expresiones.numero.test(e.target.value)) {
+			document
+			  .getElementById("container-inmovimiento")
+			  .classList.remove("formError");
+			document
+			  .getElementById("container-inmovimiento")
+			  .classList.add("formCorrect");
+			alerta.innerHTML = ``;
+		  } else {
+			document
+			  .getElementById("container-inmovimiento")
+			  .classList.add("formError");
+			document
+			  .getElementById("container-inmovimiento")
+			  .classList.remove("formCorrect");
+			alerta.innerHTML = `Debe ingresar un ingreso valido`;
+		  }
+	  break;
+}};
 
 //Listener tecla presionada
-inputs.forEach( (input) => {
-	input.addEventListener('keyup',validarFormulario)
-	input.addEventListener('blur',validarFormulario)
-})
+inputs.forEach((input) => {
+  input.addEventListener("keyup", validarFormulario);
+  input.addEventListener("blur", validarFormulario);
+});
 
-//Listener enviar formulario
-movimiento_form.addEventListener('submit', (e) => {
-	e.preventDefault();
-})
+
