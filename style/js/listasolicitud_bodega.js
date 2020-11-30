@@ -11,7 +11,6 @@ function ListarNotificacion(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var notificaciones = []
         var objeto = {} 
@@ -41,7 +40,6 @@ function ListarNotificacion(){
         }
 
         notificaciones.sort(sortByProperty('numero')); 
-        console.log(notificaciones)
 
         var output = '<caption id="table_title2">Solicitudes de Inventario</caption><tr><th>N° Solicitud</th><th>Estado</th><th>Fecha</th><th>Detalle</th></tr>'
 
@@ -82,7 +80,6 @@ function EnviarSolicitud(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         if(xhr.status >= 400){
             Push.create("Solicitud Erronea",{

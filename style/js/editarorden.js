@@ -14,7 +14,6 @@ function EditarOrden(){
     xhr.onload = () => {
         //Recoje respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var datos = new FormData();
         datos.append("numero", n_orden)
@@ -25,11 +24,8 @@ function EditarOrden(){
 
         for (var i = 0; i < recetas.length; i++) {
             datos.append("recetas", recetas[i]);
-            console.log(recetas[i])
         }
 
-        console.log(datos.recetas)
-        console.log(data.recetas)
 
         //Añade Tiempo de termino para una Orden Entregada
         if(estado == 'ENTREGADA'){
@@ -49,7 +45,6 @@ function EditarOrden(){
         peticion.onload = () => {
             //Recoje respuesta de la peticion
             var data2 = peticion.response;
-            console.log(data2);
             ListarOrdenes();
         }
         

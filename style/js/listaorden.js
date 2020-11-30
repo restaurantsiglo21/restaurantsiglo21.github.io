@@ -15,7 +15,6 @@ function ListarOrdenes(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var output = '';
         var output2 = '';
@@ -52,11 +51,9 @@ function ListarOrdenes(){
         }
 
         ordenes.sort(sortByProperty('numero')); 
-        console.log(ordenes)
 
         //Genera Tabla HTML y asigna cola en base a tiempo de preparacion
         for (var i = 0; i < ordenes.length; i++) {
-            console.log(ordenes[i].minutos)
             if (ordenes[i].minutos < 60){
                 if(ordenes[i].estado == 'PREPARACION'){
                     output += '<tr class="bg-danger"><td>'+ordenes[i].numero+'</td>'+'<td>'+ordenes[i].estado+'</td>'+'<td>'+ordenes[i].hora_ini.substring(11, 19)+'</td>'+'<td>'+ordenes[i].mesa+'</td>'+'<td>'+ordenes[i].detalle+'</td></tr>'; 

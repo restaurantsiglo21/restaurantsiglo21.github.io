@@ -15,7 +15,6 @@ function CrearMovimiento(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         //Valida si los campos fueron completados 
         if(xhr.status >= 400){

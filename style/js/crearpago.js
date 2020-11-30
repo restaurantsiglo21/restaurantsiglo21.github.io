@@ -29,7 +29,6 @@ function PedirOrden(numero){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
         
         var output = ''
         var output2 = ''
@@ -49,7 +48,6 @@ function PedirOrden(numero){
         document.getElementById('Resumen').innerHTML += '<div class="plato" id="'+numero+'"><span><strong>Resumen Orden '+numero+'</strong></span></div>'
 
         var recetas = data.recetas;
-        console.log(recetas)
 
         //Lista en HTML Ordenes con sus numeros 
         for (var i = 0; i < recetas.length; i++) {
@@ -57,7 +55,6 @@ function PedirOrden(numero){
             output += '<div class="plato"><span><strong>'+res[i]+'</strong></span><div class="Receta'+recetas[i]+'"></div></div>'
             document.getElementById(numero).innerHTML += output
 
-            console.log(recetas[i])
             //Envia Numeros de Recetas
             PreciosUnitarios(recetas[i], recetas[i]);   
         }
@@ -80,10 +77,8 @@ function CalcularTotalPago(){
 
     var final =  0 
 
-    console.log(totales.length)
     
     for (var i = 0; i < totales.length; i++) {
-        console.log(totales[i])
         final = totales[i] + final  
     }
 
@@ -104,7 +99,6 @@ function SinPago(){
     ordenes = JSON.parse(ordenes)
     
     for (var i = 0; i < ordenes.length; i++) {
-        console.log(ordenes[i])
         CompletarFecha(ordenes[i])
     }
 
@@ -134,7 +128,6 @@ function PreciosUnitarios(numero_receta, id_contenedor){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var output = ''
 
@@ -182,10 +175,9 @@ function Pagar(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         if(xhr.status >= 400){
-            console.log("Something went wrong!")
+
         }
         if(xhr.status == 201 || xhr.status == 200 ){
             //Notifica al usuario el pago exitoso
@@ -227,7 +219,6 @@ function PagarOrdenes(numero_orden, numero_movimiento, metodo_pago){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         //Crea Peticion que actualiza los datos de las ordenes y asocia el pago
         var peticion = new XMLHttpRequest();
@@ -248,12 +239,10 @@ function PagarOrdenes(numero_orden, numero_movimiento, metodo_pago){
 
         for (var i = 0; i < recetas.length; i++) {
             datos.append("recetas", recetas[i]);
-            console.log(recetas[i])
         }
 
         peticion.onload = () => {
             var data2 = peticion.response;
-            console.log(data2);
         }
         
         peticion.send(datos);
@@ -279,7 +268,6 @@ function PagarOrdenes(numero_orden, numero_movimiento, metodo_pago){
         http.onload = () => {
             //Recoge la respuesta de la peticion
             var data = xhr.response;
-            console.log(data);
         }
         
         http.send(notificacion)
@@ -302,7 +290,6 @@ function CompletarFecha(numero){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         //Edita la orden correspondiente con su fecha de termino
         var token = localStorage.getItem("SavesToken", token) 
@@ -326,7 +313,6 @@ function CompletarFecha(numero){
 
         http.onload = () => {
             var data = http.response;
-            console.log(data);
         }
 
         http.send(datos)

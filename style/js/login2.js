@@ -37,7 +37,6 @@ formulario.addEventListener('submit', function(e){
             http.onload = () => {
                 //Recoje respuesta de la peticion
                 var data = http.response;
-                console.log(data);
                 
                 var nombre_usuario = localStorage.getItem('Usuario')
 

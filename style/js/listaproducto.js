@@ -10,7 +10,6 @@ function ListarProductos(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var productos = []
         var objeto = {} 
@@ -28,7 +27,6 @@ function ListarProductos(){
             productos.push(objeto)
         }
 
-        console.log(productos);
 
         //Ordena los elementos de un arreglo de menor a mayor
         function sortByProperty(property){  
@@ -43,7 +41,6 @@ function ListarProductos(){
         }
 
         productos.sort(sortByProperty('numero')); 
-        console.log(productos);
 
         var output = '';
 

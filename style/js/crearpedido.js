@@ -60,7 +60,6 @@ function ListarPedido(){
         cantidad = pedidoRecetas[Object.keys(pedidoRecetas)[i]].cantidad
 
         salida += EnviarPeticion(num, cantidad);
-        console.log(salida)
     }
 
     //Invoca los metodos para el calculo de total de pago y total de tiempo de preparacion (minutos)
@@ -81,12 +80,10 @@ function EnviarPeticion(num, cantidad){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         //Genera Botones para Eliminar un elemento del pedido
         var output = ''
         output += '<div class="plato"><span><strong>'+data.nombre+'</strong></span><button class="remove" type="button" onclick="EliminarElemento('+num+')">X</button><span class="price">Precio: '+data.precio+' c/u</span><span class="price">'+'<span class="price">Cantidad: '+cantidad+'</span><span class="price">'+'</span></div><hr/>'
-        console.log(output)
 
         //Lista el precio del plato(Receta)
         var precio = data.precio
@@ -138,10 +135,8 @@ function CalcularTotal(){
 
     var final =  0 
 
-    console.log(totales.length)
     
     for (var i = 0; i < totales.length; i++) {
-        console.log(totales[i])
         final = totales[i] + final  
     }
 
@@ -157,10 +152,8 @@ function CalcularMinutos(){
 
     var final =  0 
 
-    console.log(minutos.length)
     
     for (var i = 0; i < minutos.length; i++) {
-        console.log(minutos[i])
         final = minutos[i] + final  
     }
 
@@ -220,15 +213,11 @@ function CrearOrden(){
     var detalle_final = ''
 
     for (var i = 0; i < detalle.length; i++) {
-        console.log(detalle[i])
         detalle_final += detalle[i] + ','  
     }
-    console.log(detalle_final)
 
     var total = document.getElementById('total').textContent
-    console.log(total)
     total = parseInt(total)
-    console.log(total)
 
     var minutos = localStorage.getItem('Total_prep')
     var mesa = localStorage.getItem('Sesion_Mesa')
@@ -246,7 +235,6 @@ function CrearOrden(){
     for (var i = 0; i < Object.keys(ordenRecetas).length; i++) {
 
         var num = ordenRecetas[Object.keys(ordenRecetas)[i]].numero
-        console.log(num)
         datos.append("recetas", num);
     }
     
@@ -259,7 +247,6 @@ function CrearOrden(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         //Añade la orden a las ordenes en curso de la mesa
         var ordenes = localStorage.getItem('Ordenes_en_curso');
@@ -268,7 +255,7 @@ function CrearOrden(){
         localStorage.setItem('Ordenes_en_curso', JSON.stringify(ordenes));
 
         if(xhr.status >= 400){
-            console.log("Error")
+
         }
         if(xhr.status == 201 || xhr.status == 200 ){
             //Notifica al cliente que su orden fue ingresada exitosamente 

@@ -10,7 +10,6 @@ function ListarRecetas(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var recetas = []
         var objeto = {} 
@@ -28,7 +27,6 @@ function ListarRecetas(){
             recetas.push(objeto)
         }
 
-        console.log(recetas);
 
         //Ordena los elementos de un arreglo de menor a mayor
         function sortByProperty(property){  
@@ -43,7 +41,6 @@ function ListarRecetas(){
         }
 
         recetas.sort(sortByProperty('nombre')); 
-        console.log(recetas);
 
         var output = '';
 

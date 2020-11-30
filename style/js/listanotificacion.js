@@ -15,7 +15,6 @@ function ListarNotificacion(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var notificaciones = []
         var objeto = {} 
@@ -45,7 +44,6 @@ function ListarNotificacion(){
         }
 
         notificaciones.sort(sortByProperty('numero')); 
-        console.log(notificaciones)
 
         var output = '<caption id="table_title2">Notificaciones</caption><tr><th>N° Notificacion</th><th>Estado</th><th>Fecha</th><th>Mesa</th><th>Detalle</th></tr>'
 
@@ -76,7 +74,6 @@ function AtenderNotificacion(numero){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         //Trae Token de Autorizacion y ajusta parametros de segunda peticion
         var token = localStorage.getItem("SavesToken", token) 
@@ -91,7 +88,6 @@ function AtenderNotificacion(numero){
         http.onload = () => {
             //Recoge la respuesta de la segunda peticion
             var data = http.response;
-            console.log(data);
             ListarNotificacion();
         }
 

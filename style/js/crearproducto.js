@@ -15,7 +15,6 @@ function CrearProducto(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         //Valida el envio de todos los datos solicitados
         if(xhr.status >= 400){
@@ -58,7 +57,6 @@ function LlenarCampos(n_producto){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         //Llena los campos con la informacion del producto
         document.getElementById('nombre_producto').value = data.nombre
@@ -90,7 +88,6 @@ function ModificarStock(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         //Recoge los datos para modificar el producto 
         var datos = new FormData();
@@ -110,7 +107,6 @@ function ModificarStock(){
         peticion.onload = () => {
             //Recoge la respuesta de la peticion
             var data2 = peticion.response;
-            console.log(data2);
             ListarProductos();
         }
 

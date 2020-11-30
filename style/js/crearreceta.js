@@ -15,7 +15,6 @@ function CrearReceta(){
             productos_format += productos[i]
         }
     }
-    console.log(productos_format)
 
     var productos = productos_format.split(',').map(function(item) {
         return parseInt(item);
@@ -34,8 +33,6 @@ function CrearReceta(){
         datos.append("productos", productos[i]);
     }
     
-    console.log(productos)
-    console.log(datos.productos)
 
     //Trae Token de Autorización y Ajusta Parametros de la peticion
     var xhr = new XMLHttpRequest();
@@ -47,7 +44,6 @@ function CrearReceta(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         if(xhr.status >= 400){
             Push.create("La receta no pudo ser creada",{

@@ -10,8 +10,6 @@ function EditarMesa(n_mesa){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
-        console.log(data.disponibilidad);
         
         //Cambia la disponibilidad a OCUPADA
         if(data.disponibilidad == "DISPONIBLE"){
@@ -27,7 +25,6 @@ function EditarMesa(n_mesa){
 
             peticion.onload = () => {
                 var data2 = peticion.response;
-                console.log(data2);
                 window.location.replace("http://127.0.0.1:8887/mesas.html")
             }
             
@@ -48,7 +45,6 @@ function EditarMesa(n_mesa){
 
             peticion.onload = () => {
                 var data2 = peticion.response;
-                console.log(data2);
                 window.location.replace("http://127.0.0.1:8887/mesas.html")
             }
             
@@ -57,7 +53,6 @@ function EditarMesa(n_mesa){
 
         //Cambia la disponibilidad a DISPONIBLE
         if(data.disponibilidad == "RESERVADA"){
-            console.log("paso")
             var datos = new FormData();
             datos.append("numero", n_mesa)
             datos.append("disponibilidad", "DISPONIBLE")
@@ -70,7 +65,6 @@ function EditarMesa(n_mesa){
 
             peticion.onload = () => {
                 var data2 = peticion.response;
-                console.log(data2);
                 window.location.replace("http://127.0.0.1:8887/mesas.html")
             }
             

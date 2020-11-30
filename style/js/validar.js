@@ -36,25 +36,6 @@ function NoLetters(){
     }
 }
 
-function Fecha(){
-    
-    var fechaini = document.getElementById("id_horaini").value;
-    var fechater = document.getElementById("id_horaterm").value;
-    console.log(fechaini);
-    console.log(fechater);
-    
-        if(fechaini>fechater)
-        {
-            console.log("Fecha Invalida");
-        }
-        else
-        {
-            console.log("Fecha Valida");
-        }
-    
-    
-}
-
 
 
 

@@ -10,7 +10,6 @@ function ReporteFinanciero() {
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var movimientos = []
         var objeto = {} 
@@ -27,7 +26,6 @@ function ReporteFinanciero() {
             movimientos.push(objeto)
         }
 
-        console.log(movimientos);
 
         //Ordena los elementos de un arreglo de menor a mayor
         function sortByProperty(property){  
@@ -42,7 +40,6 @@ function ReporteFinanciero() {
         }
 
         movimientos.sort(sortByProperty('numero')); 
-        console.log(movimientos);
 
         var ingreso_total = 0
         var egreso_total = 0
@@ -96,17 +93,6 @@ function ReporteFinanciero() {
 //Operaciones con tiempo y fecha
 function Tiempo(){
     var d = new Date();
-    console.log(d.getDate());
-    console.log(d.getMonth())
-    console.log(d.getFullYear())
-
-    console.log(d.getHours());
-    console.log(d.getMinutes())
-    console.log(d.getSeconds())
-
-    console.log(d.getTime())
-    console.log(d.getTimezoneOffset())
-    console.log(d.getUTCHours())
 
     '2020-10-10T23:47:46.026068-03:00'
     '2020-10-14T22:10:44.026068-03:00'
@@ -114,7 +100,6 @@ function Tiempo(){
     var fecha = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+'T'+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'.026068-03:00'
     
     var cumpleanos = new Date(1995,11,17,3,24,0);
-    console.log(fecha)
 }
 
 //Genera y Descarga Reporte de Platos Vendidos en formato PDF
@@ -129,7 +114,6 @@ function PlatosVendidos(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data); 
 
         var numeros_recetas = []
 
@@ -150,7 +134,6 @@ function PlatosVendidos(){
         http.onload = () => {
             //Recoge la respuesta de la segunda peticion
             var data = http.response;
-            console.log(data);
 
             var indices = localStorage.getItem('Indices')
             indices  = JSON.parse(indices)
@@ -169,7 +152,6 @@ function PlatosVendidos(){
                 }
             }
 
-            console.log(platos)
 
             var diccionario = []
 
@@ -206,8 +188,6 @@ function PlatosVendidos(){
             }
 
 
-            console.log(diccionario)
-            console.log(contador)
 
             localStorage.setItem('Platos_Vendidos',JSON.stringify(diccionario))
             localStorage.setItem('Platos_Totales', contador)
@@ -235,7 +215,6 @@ function ClientesAtendidos(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data); 
 
         var contador = 0;
 
@@ -246,7 +225,6 @@ function ClientesAtendidos(){
             }
         }
 
-        console.log(contador)
 
         localStorage.setItem('Clientes_atendidos', contador)
 
@@ -269,7 +247,6 @@ function TiemposAtencion(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var tiempos = []
 
@@ -311,7 +288,6 @@ function TiemposAtencion(){
             tiempo_calculado.push(minutos_calculado)
         }
 
-        console.log(tiempo_calculado)
 
         var max = 0;
         var min = 99999999999999;
@@ -335,22 +311,15 @@ function TiemposAtencion(){
         var max_seg = 0
         max_seg = max % 60
         max = Math.trunc(max/60)
-        console.log(max)
-        console.log(max_seg)
 
         var min_seg = 0
         
-        console.log(min)
 
         if(min > 60){
             min_seg = max % 60
             min = Math.trunc(min/60)
         }
         
-        console.log(min)
-        console.log(min_seg)
-
-        console.log(media)
 
         localStorage.setItem('max',max)
         localStorage.setItem('max_seg',max_seg)
@@ -376,7 +345,6 @@ function RenderPDF(){
     xhr.onload = () => {
         //Recoge la respuesta de peticion
         var data = xhr.response;
-        console.log(data);
 
         var platos = localStorage.getItem('Platos_Vendidos')
         platos = JSON.parse(platos)

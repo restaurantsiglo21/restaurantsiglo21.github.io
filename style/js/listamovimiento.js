@@ -10,7 +10,6 @@ function ListarMovimientos(){
     xhr.onload = () => {
         //Recoge la respuesta de la peticion
         var data = xhr.response;
-        console.log(data);
 
         var movimientos = []
         var objeto = {} 
@@ -27,7 +26,6 @@ function ListarMovimientos(){
             movimientos.push(objeto)
         }
 
-        console.log(movimientos);
 
         //Ordena los elementos de un arreglo de menor a mayor
         function sortByProperty(property){  
@@ -42,7 +40,6 @@ function ListarMovimientos(){
         }
 
         movimientos.sort(sortByProperty('numero')); 
-        console.log(movimientos);
 
         var output = '';
         var output = '<tr><th>N° Movimiento</th><th>Fecha</th><th>Detalle</th><th>Metodo de Pago</th><th>Ingreso</th><th>Egreso</th></tr>';

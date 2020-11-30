@@ -10,7 +10,6 @@ xhr.setRequestHeader('Authorization', 'Token ' + token);
 xhr.onload = () => {
     //Recoge la respuesta de la peticion
     var data = xhr.response;
-    console.log(data);
 
     //Lista mesas segun disponibilidad
     for (var i = 0; i < data.length; i++) {

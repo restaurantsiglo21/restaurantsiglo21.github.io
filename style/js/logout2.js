@@ -1,6 +1,5 @@
 //Cierra la Sesion actual desde cualquier vista 
 function Logout2(){
-    console.log("Se deslogeo")
 
     //Trae Token de Autorización y Ajusta Parametros de la peticion
     var token = localStorage.getItem("SavesToken", token) 
@@ -12,7 +11,7 @@ function Logout2(){
     xhr.onload = () => {
     
         if(xhr.status >= 400){
-            console.log("Something went wrong!")
+
         }
         if(xhr.status == 201 || xhr.status == 200){
 
